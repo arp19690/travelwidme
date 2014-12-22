@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url><loc>http://localhost/work/svn/travel/</loc><changefreq>daily</changefreq><priority>1.00</priority></url>
+<url><loc>http://localhost/work/svn/travel/contactUs</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/aboutUs</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/how-it-works</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/privacy</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/terms</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/login</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/register</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/forgotPassword</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/trip/view/I-would-love-to-go-to-spain-1</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/trip/view/I-would-love-to-go-to-spain-3</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/trip/view/what-is-this-3</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/profile/arp19690</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/profile/testi.radsoft</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/profile/suhanimathur90</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/profile/arpit123</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/blog/read/2</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>http://localhost/work/svn/travel/blog/read/3</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+</urlset>

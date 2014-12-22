@@ -1,0 +1,78 @@
+<?php
+
+    if (!defined('BASEPATH'))
+        exit('No direct script access allowed');
+    /*
+      | -------------------------------------------------------------------------
+      | URI ROUTING
+      | -------------------------------------------------------------------------
+      | This file lets you re-map URI requests to specific controller functions.
+      |
+      | Typically there is a one-to-one relationship between a URL string
+      | and its corresponding controller class/method. The segments in a
+      | URL normally follow this pattern:
+      |
+      |	example.com/class/method/id/
+      |
+      | In some instances, however, you may want to remap this relationship
+      | so that a different class/function is called than the one
+      | corresponding to the URL.
+      |
+      | Please see the user guide for complete details:
+      |
+      |	http://codeigniter.com/user_guide/general/routing.html
+      |
+      | -------------------------------------------------------------------------
+      | RESERVED ROUTES
+      | -------------------------------------------------------------------------
+      |
+      | There area two reserved routes:
+      |
+      |	$route['default_controller'] = 'welcome';
+      |
+      | This route indicates which controller class should be loaded if the
+      | URI contains no data. In the above example, the "welcome" class
+      | would be loaded.
+      |
+      |	$route['404_override'] = 'errors/page_missing';
+      |
+      | This route will tell the Router what URI segments to use if those provided
+      | in the URL cannot be matched to a valid route.
+      |
+     */
+//$route['module_name'] = 'admin';
+    $route['default_controller'] = "index";
+    $route['404_override'] = 'index/pageNotFound';
+
+    $route['home'] = 'index/index';
+    $route['contactUs'] = 'staticpage/contact';
+    $route['aboutUs'] = 'staticpage/index/about';
+    $route['how-it-works'] = 'staticpage/index/how-it-works';
+    $route['privacy'] = 'staticpage/index/privacy';
+    $route['terms'] = 'staticpage/index/terms';
+    $route['myBlogs'] = 'blog/myBlogs';
+    $route['login'] = 'index/login';
+    $route['register'] = 'index/register';
+    $route['forgotPassword'] = 'index/forgotPassword';
+    $route['changePassword'] = 'user/changePassword';
+    $route['activate'] = 'index/activate';
+
+    $route['myAlbums'] = 'user/myAlbums';
+    $route['albums/(:any)'] = 'user/myAlbums/$1';
+    $route['view/album/(:any)'] = 'user/viewAlbum/$1';
+    $route['delete/album/(:any)'] = 'user/deleteAlbum/$1';
+    $route['view/photo/(:any)'] = 'user/viewPhoto/$1';
+    $route['delete/photo/(:any)/(:any)'] = 'user/deletePhotoAjax/$1/$2';
+    $route['delete/photo-noax/(:any)'] = 'user/deletePhoto/$1';
+    $route['delete/comment/(:any)'] = 'user/deleteCommentAjax/$1';
+    $route['upload/album/(:any)'] = 'user/uploadPhotos/$1';
+    $route['myAccount'] = 'user/myAccount';
+    $route['profile/(:any)'] = 'user/viewProfile/$1';
+    $route['connect/(:any)'] = 'user/connectWith/$1';
+
+    $route['map-view'] = 'index/map';
+    $route['login/facebook'] = 'index/loginwithfacebook';
+    $route['logout'] = 'index/logout';
+
+    /* End of file routes.php */
+/* Location: ./application/config/routes.php */
