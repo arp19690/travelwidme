@@ -46,13 +46,8 @@
                 window.location.hash = '';
             }
         </script>
-
-        <!-- Twitter Bootstrap -->
-        <link href="<?php echo base_url(BOOTSTRAP_PATH . "/css/bootstrap.min.css"); ?>" rel="stylesheet">
         <link rel="shortcut icon" href="<?php echo base_url(IMAGES_PATH . "/favicon.ico"); ?>">
-
-        <link href="<?php echo base_url(CSS_PATH . "/colorbox/colorbox.css"); ?>" rel="stylesheet"> 
-        <link href="<?php echo base_url(CSS_PATH . "/custom.css"); ?>" rel="stylesheet"> 
+        <link href="<?php echo base_url(CSS_PATH . "/combined.css"); ?>" rel="stylesheet"> 
 
         <script src="<?php echo base_url(JS_PATH . "/jquery.js"); ?>"></script>
         <script src="<?php echo base_url(JS_PATH . "/functions.js"); ?>"></script>
@@ -60,7 +55,7 @@
 
     <body>
         <div id="fb-root"></div>
-        <script>(function(d, s, id) {
+        <script>(function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id))
                     return;
