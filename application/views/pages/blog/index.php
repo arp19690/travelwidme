@@ -77,13 +77,7 @@
         </section> <!-- /main content -->
 
         <section class="col-lg-3 margin-top-40">
-            <div class="chitika-ad">
-                <?php echo getChitikaAd(); ?>
-            </div>
 
-            <div class="chitika-ad margin-top-20">
-                <?php echo getChitikaAd(); ?>
-            </div>
         </section>
     </div>
 </div> <!-- /container -->
