@@ -25,7 +25,7 @@
 
             $loginUrl = $facebook->getLoginUrl(array(
                 "redirect_uri" => $redirect_uri,
-                "scope" => "email, user_photos, user_birthday, user_friends",
+                "scope" => "email, user_photos, user_friends",
             ));
 
             return $loginUrl;
