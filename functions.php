@@ -1,5 +1,22 @@
 <?php
 
+    function getUniqueBlogURLKey($random_number = NULL, $string_lenth = 10)
+    {
+        require_once APPPATH . '/models/common_model.php';
+        $model = new Common_model();
+        if ($random_number == NULL)
+        {
+            $random_number = getRandomNumberLength(time(), $string_lenth);
+        }
+        $is_exists = $model->is_exists('blog_id', TABLE_BLOGS, array('blog_url_key' => $random_number));
+        if (!empty($is_exists))
+        {
+            getUniqueBlogURLKey(getRandomNumberLength($random_number), $string_lenth);
+        }
+
+        return $random_number;
+    }
+
     function goBack($steps = '1')
     {
         return 'javascript:history.go(-' . $steps . ');';
@@ -131,9 +148,9 @@
             }
         }
 
-        $previous_url=NULL;
-        $next_url=NULL;
-        
+        $previous_url = NULL;
+        $next_url = NULL;
+
         if (isset($image_name_array[$current_key - 1]))
         {
             $previous_url = base_url('view/photo/' . $image_name_array[$current_key - 1]['album_key'] . '/' . $image_name_array[$current_key - 1]['photo_id']);
@@ -578,3 +595,4 @@
             define("CAPTCHA_ANSWER", $value);
         }
     }
+    

@@ -22,8 +22,9 @@
                     {
 //                    prd($value);
                         $blog_id = $value["blog_id"];
+                        $blog_url_key= $value["blog_url_key"];
                         $title = stripslashes($value["blog_title"]);
-                        $link = base_url('blog/read/' . $blog_id);
+                        $link = base_url('blog/read/' . $blog_url_key);
                         $description = stripslashes(getNWordsFromString(strip_tags($value["blog_content"]), 100));
                         $date = date("F d, Y", strtotime($value["blog_timestamp"]));
                         $author = "Guest";

@@ -158,10 +158,10 @@
             }
 
             // all the active blogs
-            $blog_records = $model->fetchSelectedData('blog_id', TABLE_BLOGS, array('blog_status' => '1'));
+            $blog_records = $model->fetchSelectedData('blog_url_key', TABLE_BLOGS, array('blog_status' => '1'));
             foreach ($blog_records as $brKey => $brValue)
             {
-                $blog_url = base_url('blog/read/' . $brValue['blog_id']);
+                $blog_url = base_url('blog/read/' . $brValue['blog_url_key']);
                 $xml .= '<url><loc>' . $blog_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
