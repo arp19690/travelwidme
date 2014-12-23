@@ -59,7 +59,7 @@
                     return;
                 js = d.createElement(s);
                 js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=716914558360050";
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=<?php echo FACEBOOK_APP_ID; ?>";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
         <?php
