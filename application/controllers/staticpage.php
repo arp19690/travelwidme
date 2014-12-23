@@ -132,13 +132,13 @@
 
             $xml = '<?xml version = "1.0" encoding = "UTF-8"?>' . "\n";
             $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' . "\n";
-            $xml .= '<url><loc>' . base_url() . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>' . "\n";
+            $xml .= '<url><loc>' . base_url() . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>' . "\n";
 
             // all the static links
             $static_links_without_base_url = array('contact-us', 'about-us', 'how-it-works', 'privacy-policy', 'terms', 'login', 'register', 'forgot-password');
             foreach ($static_links_without_base_url as $slKey => $slValue)
             {
-                $xml .= '<url><loc>' . base_url($slValue) . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . base_url($slValue) . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             // all the active trips
@@ -146,7 +146,7 @@
             foreach ($trip_records as $trKey => $trValue)
             {
                 $trip_url = getTripUrl($trValue['url_key']);
-                $xml .= '<url><loc>' . $trip_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $trip_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             // all the active users
@@ -154,7 +154,7 @@
             foreach ($user_records as $urKey => $urValue)
             {
                 $public_profile_url = getPublicProfileUrl($urValue['username']);
-                $xml .= '<url><loc>' . $public_profile_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $public_profile_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             // all the active blogs
@@ -162,7 +162,7 @@
             foreach ($blog_records as $brKey => $brValue)
             {
                 $blog_url = base_url('blog/read/' . $brValue['blog_url_key']);
-                $xml .= '<url><loc>' . $blog_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $blog_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             // all the view photo pages
@@ -170,7 +170,7 @@
             foreach ($photo_records as $prKey => $prValue)
             {
                 $photo_url = base_url('view/album/' . $prValue['image_name']);
-                $xml .= '<url><loc>' . $photo_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $photo_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             $xml .= '</urlset>';
