@@ -1,5 +1,22 @@
 <?php
 
+    function getUniqueAlbumURLKey($random_number = NULL, $string_lenth = 10)
+    {
+        require_once APPPATH . '/models/common_model.php';
+        $model = new Common_model();
+        if ($random_number == NULL)
+        {
+            $random_number = getRandomNumberLength(time(), $string_lenth);
+        }
+        $is_exists = $model->is_exists('album_id', TABLE_ALBUMS, array('album_key' => $random_number));
+        if (!empty($is_exists))
+        {
+            getUniqueAlbumURLKey(getRandomNumberLength($random_number), $string_lenth);
+        }
+
+        return $random_number;
+    }
+
     function getUniqueBlogURLKey($random_number = NULL, $string_lenth = 10)
     {
         require_once APPPATH . '/models/common_model.php';

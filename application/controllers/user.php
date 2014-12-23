@@ -551,7 +551,7 @@
                 if (empty($is_album_name_exists))
                 {
                     // valid
-                    $album_key = substr(getEncryptedString(time() . $user_id . USER_IP . $this->session->userdata['username']), 0, 12);
+                    $album_key = getUniqueAlbumURLKey();
                     $data_array = array(
                         'user_id' => $user_id,
                         'username' => $this->session->userdata['username'],
