@@ -291,7 +291,7 @@
 
     function getFacebookLikeBox($width = 300, $color_scheme = "light")
     {
-        return '<div class="fb-like-box" data-href="https://www.facebook.com/TravelWid.Me" data-width="' . $width . '" data-colorscheme="' . $color_scheme . '" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>';
+        return '<div class="fb-like-box" data-href="' . FACEBOOK_SOCIAL_LINK . '" data-width="' . $width . '" data-colorscheme="' . $color_scheme . '" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>';
     }
 
     function getChitikaAd($width = 300, $height = 250)
