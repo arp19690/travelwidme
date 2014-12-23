@@ -181,6 +181,10 @@
             fclose($file);
             die;
         }
-
+        
+        public function cronjob()
+        {
+            $this->updateSitemap();
+        }
     }
     
