@@ -44,7 +44,7 @@
     define('JS_PATH', 'assets/front/js');
     define('IMAGES_PATH', 'assets/front/images');
 
-    define('NO_IMAGE_PATH', 'assets/front/images/no-image.png');
+    define('NO_IMAGE_PATH', 'assets/front/images/no-image-small.jpg');
 
     define('USER_IMG_PATH', 'resources/user-images');
     define('USER_IMG_WIDTH', 600);
