@@ -31,7 +31,19 @@
             $this->email->subject($subject);
             $this->email->message($message);
 
-            $this->email->send();
+            if ($this->email->send())
+            {
+                $model = new Common_model();
+                $data_array = array(
+                    'es_email' => $to_email,
+                    'es_subject' => addslashes($subject),
+                    'es_text' => addslashes($message),
+                    'es_from_email' => $from_email,
+                    'es_from_name' => $from_name,
+                    'es_ipaddress' => USER_IP,
+                );
+                $model->insertData(TABLE_EMAILS_SENT, $data_array);
+            }
         }
 
     }
