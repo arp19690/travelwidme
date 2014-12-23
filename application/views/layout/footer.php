@@ -25,7 +25,7 @@
             <h2>Twitter Feed:</h2>
             <div>
                 <a class="twitter-timeline"  href="https://twitter.com/TravelWidDotMe"  data-widget-id="459759619611455489">Tweets by @TravelWidDotMe</a>
-                <script>!function(d, s, id) {
+                <script>!function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
                         if (!d.getElementById(id)) {
                             js = d.createElement(s);
@@ -66,28 +66,19 @@
         </div>
     </div>
 </footer>
-
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="<?php echo base_url(BOOTSTRAP_PATH . "/js/bootstrap.min.js"); ?>"></script>
-
-<script type='text/javascript' src='<?php echo base_url(JS_PATH . "/jquery.lazyload.min.js"); ?>'></script>
-<script type='text/javascript' src='<?php echo base_url(JS_PATH . "/jquery.colorbox.min.js"); ?>'></script>
-<script type='text/javascript' src='<?php echo base_url(JS_PATH . "/jquery.validate.js"); ?>'></script>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 <script type='text/javascript' src='<?php echo base_url(JS_PATH . "/custom.js"); ?>'></script>
 <script>
-    // to check if unread messages, new connect requests, so that the message icon in the navbar could blink
-    checkNavbarBlinkNotification('<?php echo base_url('user/checkMessageNotificationAjax'); ?>', '#nav-messages');
-    checkNavbarBlinkNotification('<?php echo base_url('user/checkConnectRequestAjax'); ?>', '#nav-connect-requests');
+                    // to check if unread messages, new connect requests, so that the message icon in the navbar could blink
+                    checkNavbarBlinkNotification('<?php echo base_url('user/checkMessageNotificationAjax'); ?>', '#nav-messages');
+                    checkNavbarBlinkNotification('<?php echo base_url('user/checkConnectRequestAjax'); ?>', '#nav-connect-requests');
 </script>
 
 <!--Google Analytics START-->
 <script>
-    (function(i, s, o, g, r, a, m) {
+    (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
+        i[r] = i[r] || function () {
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date();
         a = s.createElement(o),

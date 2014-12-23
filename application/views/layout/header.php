@@ -48,9 +48,7 @@
         </script>
         <link rel="shortcut icon" href="<?php echo base_url(IMAGES_PATH . "/favicon.ico"); ?>">
         <link href="<?php echo base_url(CSS_PATH . "/combined.css"); ?>" rel="stylesheet"> 
-
-        <script src="<?php echo base_url(JS_PATH . "/jquery.js"); ?>"></script>
-        <script src="<?php echo base_url(JS_PATH . "/functions.js"); ?>"></script>
+        <script src="<?php echo base_url(JS_PATH . "/combined.js"); ?>"></script>
     </head>
 
     <body>
