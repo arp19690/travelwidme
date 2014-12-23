@@ -135,7 +135,7 @@
             $xml .= '<url><loc>' . base_url() . '</loc><changefreq>daily</changefreq><priority>1.00</priority></url>' . "\n";
 
             // all the static links
-            $static_links_without_base_url = array('contactUs', 'aboutUs', 'how-it-works', 'privacy', 'terms', 'login', 'register', 'forgotPassword');
+            $static_links_without_base_url = array('contact-us', 'about-us', 'how-it-works', 'privacy-policy', 'terms', 'login', 'register', 'forgot-password');
             foreach ($static_links_without_base_url as $slKey => $slValue)
             {
                 $xml .= '<url><loc>' . base_url($slValue) . '</loc><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";

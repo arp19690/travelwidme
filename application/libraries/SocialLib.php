@@ -165,7 +165,7 @@
 
                             $returnArray["flash_type"] = "success";
                             $returnArray["flash_message"] = "<strong>Welcome!</strong> Please complete all your account details.";
-                            $returnArray["return_url"] = "myAccount";
+                            $returnArray["return_url"] = "my-account";
                             $returnArray["session_array"] = $session_data_array;
                         }
                     }

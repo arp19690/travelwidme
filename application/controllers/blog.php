@@ -195,7 +195,7 @@
                 @unlink(BLOG_IMG_PATH . "/" . getEncryptedString($blog_id) . ".jpg");
                 $model->deleteData(TABLE_BLOGS, array("user_id" => $user_id, "blog_id" => $blog_id));
                 $this->session->set_flashdata('success', 'Your blog has been deleted permanently');
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {

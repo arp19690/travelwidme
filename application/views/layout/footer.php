@@ -13,9 +13,9 @@
                     <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
                     <li><a href="<?php echo base_url('register'); ?>">Sign Up</a></li>
                     <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
-                    <li><a href="<?php echo base_url('contactUs'); ?>">Contact us</a></li>
+                    <li><a href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
                     <li><a href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
-                    <li><a href="<?php echo base_url('privacy'); ?>">Privacy policy</a></li>
+                    <li><a href="<?php echo base_url('privacy-policy'); ?>">Privacy policy</a></li>
                     <li><a href="<?php echo base_url('terms'); ?>">Terms &amp; conditions</a></li>
                 </ul>
             </div>
@@ -59,7 +59,7 @@
                 <li>|</li>
                 <li><a href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
                 <li>|</li>
-                <li><a href="<?php echo base_url('privacy'); ?>">Privacy policy</a></li>
+                <li><a href="<?php echo base_url('privacy-policy'); ?>">Privacy policy</a></li>
                 <li>|</li>
                 <li><a href="<?php echo base_url('terms'); ?>">Terms &amp; conditions</a></li>
             </ul>

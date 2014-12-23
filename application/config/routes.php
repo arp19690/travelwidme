@@ -45,19 +45,19 @@
     $route['404_override'] = 'index/pageNotFound';
 
     $route['home'] = 'index/index';
-    $route['contactUs'] = 'staticpage/contact';
-    $route['aboutUs'] = 'staticpage/index/about';
+    $route['contact-us'] = 'staticpage/contact';
+    $route['about-us'] = 'staticpage/index/about';
     $route['how-it-works'] = 'staticpage/index/how-it-works';
-    $route['privacy'] = 'staticpage/index/privacy';
+    $route['privacy-policy'] = 'staticpage/index/privacy';
     $route['terms'] = 'staticpage/index/terms';
-    $route['myBlogs'] = 'blog/myBlogs';
+    $route['my-blogs'] = 'blog/myBlogs';
     $route['login'] = 'index/login';
     $route['register'] = 'index/register';
-    $route['forgotPassword'] = 'index/forgotPassword';
-    $route['changePassword'] = 'user/changePassword';
+    $route['forgot-password'] = 'index/forgotPassword';
+    $route['change-password'] = 'user/changePassword';
     $route['activate'] = 'index/activate';
 
-    $route['myAlbums'] = 'user/myAlbums';
+    $route['my-albums'] = 'user/myAlbums';
     $route['albums/(:any)'] = 'user/myAlbums/$1';
     $route['view/album/(:any)'] = 'user/viewAlbum/$1';
     $route['delete/album/(:any)'] = 'user/deleteAlbum/$1';
@@ -66,7 +66,7 @@
     $route['delete/photo-noax/(:any)'] = 'user/deletePhoto/$1';
     $route['delete/comment/(:any)'] = 'user/deleteCommentAjax/$1';
     $route['upload/album/(:any)'] = 'user/uploadPhotos/$1';
-    $route['myAccount'] = 'user/myAccount';
+    $route['my-account'] = 'user/myAccount';
     $route['profile/(:any)'] = 'user/viewProfile/$1';
     $route['connect/(:any)'] = 'user/connectWith/$1';
 

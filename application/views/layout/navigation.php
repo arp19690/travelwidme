@@ -59,13 +59,13 @@
                                 <li class="divider"></li>
                                 <li><a href="<?php echo base_url('trip/myTrips'); ?>"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;My Trips</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo base_url('myBlogs'); ?>"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;My Blogs</a></li>
+                                <li><a href="<?php echo base_url('my-blogs'); ?>"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;My Blogs</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo base_url('myAlbums'); ?>"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;My Albums</a></li>
+                                <li><a href="<?php echo base_url('my-albums'); ?>"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;My Albums</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo base_url('myAccount'); ?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;My Account</a></li>
+                                <li><a href="<?php echo base_url('my-account'); ?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;My Account</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo base_url('changePassword'); ?>"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;Change Password</a></li>
+                                <li><a href="<?php echo base_url('change-password'); ?>"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;Change Password</a></li>
                                 <li class="divider"></li>
                                 <li><a href="<?php echo base_url('logout'); ?>"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Logout</a></li>
                             </ul>

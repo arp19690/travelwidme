@@ -86,7 +86,7 @@
             }
             else
             {
-                redirect('myAccount');
+                redirect('my-account');
             }
         }
 
@@ -185,7 +185,7 @@
             }
             else
             {
-                redirect('myAccount');
+                redirect('my-account');
             }
         }
 
@@ -284,7 +284,7 @@
             }
             else
             {
-                redirect(base_url('changePassword'));
+                redirect(base_url('change-password'));
             }
         }
 

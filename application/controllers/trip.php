@@ -176,7 +176,7 @@
                     $this->session->set_flashdata("success", "<strong>Success!</strong> Your plan has been posted successfully. Share with your friends.");
                     redirect('trip/view/' . $url_key);
                 }
-                redirect('myAccount');
+                redirect('my-account');
             }
             else
             {

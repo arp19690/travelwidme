@@ -53,7 +53,7 @@
                     @$this->session->set_userdata("last_name", trim($arr["last_name"]));
                     @$this->session->set_userdata("username", trim($arr["username"]));
                 }
-                redirect('myAccount');
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -392,13 +392,13 @@
                         // passwords match
                         $model->updateData(TABLE_USERS, array('user_password' => md5($confirm_password)), array('user_id' => $user_id));
                         $this->session->set_flashdata('success', '<strong>Success!</strong> Your password has been changed');
-                        redirect(base_url('changePassword'));
+                        redirect(base_url('change-password'));
                     }
                     else
                     {
                         // passwords do not match
                         $this->session->set_flashdata('error', '<strong>Sorry!</strong> Passwords you have entered does not match');
-                        redirect(base_url('changePassword'));
+                        redirect(base_url('change-password'));
                     }
                 }
 
@@ -427,7 +427,7 @@
                 $simpleImage->uploadImage($source, $destination, USER_IMG_WIDTH, USER_IMG_HEIGHT);
 
                 $this->session->set_flashdata('success', '<strong>Success!</strong> Your profile picture has been changed');
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -443,7 +443,7 @@
                 $destination = USER_IMG_PATH . "/" . getEncryptedString($user_id) . ".jpg";
                 @unlink($destination);
                 $this->session->set_flashdata('success', '<strong>Success!</strong> The profile picture you uplaoded has been removed');
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -459,7 +459,7 @@
                 $this->load->library('SocialLib');
                 $socialLib = new SocialLib();
                 $socialLib->connectWithFacebook($user_id);
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -477,7 +477,7 @@
                 $model->updateData(TABLE_USERS, array('user_facebook_id' => '', 'user_facebook_username' => '', 'user_facebook_photos' => ''), array('user_id' => $user_id));
 
                 $this->session->set_flashdata('success', '<strong>Success!</strong> Your facebook connection has been removed');
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -571,7 +571,7 @@
                     // invalid
                     $this->session->set_flashdata('error', '<strong>Oops!</strong> Album name already exists.');
                 }
-                redirect(base_url('myAlbums'));
+                redirect(base_url('my-albums'));
             }
             else
             {
@@ -892,7 +892,7 @@
                 {
                     $this->session->set_flashdata('error', '<strong>Sorry!</strong> You are not authorized to perform this action');
                 }
-                redirect('myAlbums');
+                redirect(base_url('my-albums'));
             }
         }
 
