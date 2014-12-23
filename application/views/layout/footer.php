@@ -24,7 +24,7 @@
         <div class="col-lg-4">
             <h2>Twitter Feed:</h2>
             <div>
-                <a class="twitter-timeline"  href="https://twitter.com/TravelWidDotMe"  data-widget-id="459759619611455489">Tweets by @TravelWidDotMe</a>
+                <a class="twitter-timeline"  href="<?php echo TWITTER_SOCIAL_LINK; ?>"  data-widget-id="459759619611455489">Tweets by @TravelWid.Me</a>
                 <script>!function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
                         if (!d.getElementById(id)) {
