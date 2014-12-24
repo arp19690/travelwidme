@@ -231,7 +231,7 @@
         <li><a href="<?php echo FACEBOOK_SOCIAL_LINK; ?>" title="Facebook" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/facebook.png"); ?>" alt="Facebook" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/facebook.png"); ?>"/></a></li>
         <li><a href="<?php echo TWITTER_SOCIAL_LINK; ?>" title="Twitter" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/twitter.png"); ?>" alt="Twitter" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/twitter.png"); ?>"/></a></li>
         <li><a href="<?php echo PINTEREST_SOCIAL_LINK; ?>" title="Pinterest" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/pinterest.png"); ?>" alt="Pinterest" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/pinterest.png"); ?>"/></a></li>
-        <li><a href="<?php echo GPLUS_SOCIAL_LINK; ?>" title="Google Plus" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>" alt="Google Plus" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>"/></a></li>
+        <li><a href="<?php echo GPLUS_SOCIAL_LINK; ?>" title="Google Plus" target="_blank" rel="publisher"><img src="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>" alt="Google Plus" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>"/></a></li>
     </ul>
 </div>
 
