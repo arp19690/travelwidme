@@ -55,7 +55,7 @@
             <ul class="col-lg-6 col-xs-12 text-right footer-links">
                 <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
                 <li>|</li>
-                <li><a href="<?php echo base_url('contactUs'); ?>">Contact us</a></li>
+                <li><a href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
                 <li>|</li>
                 <li><a href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
                 <li>|</li>
