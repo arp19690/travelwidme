@@ -55,7 +55,7 @@
             if (!isset($this->session->userdata["user_id"]))
             {
                 ?>
-                <a href="<?php echo base_url("login/facebook?next=" . current_url()); ?>" class="btn btn-primary btn-lg margin-top-20 facebook-blue-btn" title="Login with facebook"><span class="facebook-initial">f</span>&nbsp;&nbsp;Login with facebook</a>
+                <a href="<?php echo base_url("login/facebook"); ?>" class="btn btn-primary btn-lg margin-top-20 facebook-blue-btn" title="Login with facebook"><span class="facebook-initial">f</span>&nbsp;&nbsp;Login with facebook</a>
                 <?php
             }
         ?>
