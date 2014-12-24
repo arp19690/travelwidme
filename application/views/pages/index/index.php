@@ -12,7 +12,7 @@
                 <h2><strong>I am looking for:</strong></h2>
 
                 <ul class="nav nav-pills col-lg-offset-4 col-sm-offset-5 col-xs-offset-2 margin-bottom-20 margin-top-20 ">
-                    <li class="active"><a href="#" id="travel"><span class="glyphicon glyphicon-plane"></span>&nbsp;&nbsp;Travelers</a></li>
+                    <li class="active"><a itemprop="url" href="#" id="travel"><span class="glyphicon glyphicon-plane"></span>&nbsp;&nbsp;Travelers</a></li>
                 </ul>
 
                 <div class="input-group">
@@ -55,7 +55,7 @@
             if (!isset($this->session->userdata["user_id"]))
             {
                 ?>
-                <a href="<?php echo base_url("login/facebook"); ?>" class="btn btn-primary btn-lg margin-top-20 facebook-blue-btn" title="Login with facebook"><span class="facebook-initial">f</span>&nbsp;&nbsp;Login with facebook</a>
+                <a itemprop="url" href="<?php echo base_url("login/facebook"); ?>" class="btn btn-primary btn-lg margin-top-20 facebook-blue-btn" title="Login with facebook"><span class="facebook-initial">f</span>&nbsp;&nbsp;Login with facebook</a>
                 <?php
             }
         ?>
@@ -86,7 +86,7 @@
                             <?php
                             $tripHeaderImage = getTripHeaderImage($tValue["trip_header_image"], $tValue["trip_images"]);
                             ?>
-                            <a href="<?php echo $link; ?>"><img src="<?php echo $tripHeaderImage; ?>" alt="<?php echo $trip_title; ?>" class="img-rounded margin-bottom-20 width-100 trip-header-img lazy" data-original="<?php echo $tripHeaderImage; ?>"/></a>
+                            <a itemprop="url" href="<?php echo $link; ?>"><img src="<?php echo $tripHeaderImage; ?>" alt="<?php echo $trip_title; ?>" class="img-rounded margin-bottom-20 width-100 trip-header-img lazy" data-original="<?php echo $tripHeaderImage; ?>"/></a>
 
                             <?php
                             if (isset($this->session->userdata["user_id"]) && $tValue["trip_user_id"] != @$this->session->userdata["user_id"])
@@ -100,21 +100,21 @@
                                 }
                                 ?>
                                 <div class="hover-like-block like-status-block">                            
-                                    <a href="#" class="btn btn-default <?php echo $to_like; ?>" id="add" rel="<?php echo base_url('trip/tripToggleLikeAjax/add/' . $tValue["url_key"]); ?>"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;Like</a>
-                                    <a href="#" onclick="return confirm('Are you sure to unlike?');" class="btn btn-success <?php echo $liked; ?>" id="remove" rel="<?php echo base_url('trip/tripToggleLikeAjax/remove/' . $tValue["url_key"]); ?>"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;Liked</a>
+                                    <a itemprop="url" href="#" class="btn btn-default <?php echo $to_like; ?>" id="add" rel="<?php echo base_url('trip/tripToggleLikeAjax/add/' . $tValue["url_key"]); ?>"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;Like</a>
+                                    <a itemprop="url" href="#" onclick="return confirm('Are you sure to unlike?');" class="btn btn-success <?php echo $liked; ?>" id="remove" rel="<?php echo base_url('trip/tripToggleLikeAjax/remove/' . $tValue["url_key"]); ?>"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;Liked</a>
                                 </div>
                                 <?php
                             }
                             ?>
                         </div>
 
-                        <a href="<?php echo $link; ?>"><h4 class="margin-bottom-20"><?php echo $trip_title; ?></h4></a>
+                        <a itemprop="url" href="<?php echo $link; ?>"><h4 class="margin-bottom-20"><?php echo $trip_title; ?></h4></a>
                         <p>By: &nbsp;&nbsp;
                             <?php
                             $facebookUserImage = getUserImage($tValue["trip_user_id"], $tValue["user_facebook_id"], NULL, 70, 70);
                             ?>
                             <span><img src="<?php echo $facebookUserImage; ?>" alt="<?php echo $user_full_name; ?>" class="img-circle trip-bottom-user-img lazy" data-original="<?php echo $facebookUserImage; ?>"/></span>
-                            &nbsp;&nbsp;<a href="<?php echo getPublicProfileUrl($tValue["username"]); ?>"><span><?php echo $user_full_name; ?></span></a>
+                            &nbsp;&nbsp;<a itemprop="url" href="<?php echo getPublicProfileUrl($tValue["username"]); ?>"><span><?php echo $user_full_name; ?></span></a>
                         </p>
                     </div>
                     <?php
@@ -133,7 +133,7 @@
             {
                 ?>
                 <div class="text-center clearfix margin-top-40">
-                    <a href="<?php echo base_url('trip/search?looking_for=travel'); ?>" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;View More</a>
+                    <a itemprop="url" href="<?php echo base_url('trip/search?looking_for=travel'); ?>" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;View More</a>
                 </div>
                 <?php
             }
@@ -167,7 +167,7 @@
                     ?>
                     <div class="trip-masonry-blocks">
                         <div class="img-like-container">
-                            <a href="<?php echo $link; ?>"><img src="<?php echo $tripHeaderImage; ?>" alt="<?php echo $trip_title; ?>" class="img-rounded margin-bottom-20 width-100 trip-header-img lazy" data-original="<?php echo $tripHeaderImage; ?>"/></a>
+                            <a itemprop="url" href="<?php echo $link; ?>"><img src="<?php echo $tripHeaderImage; ?>" alt="<?php echo $trip_title; ?>" class="img-rounded margin-bottom-20 width-100 trip-header-img lazy" data-original="<?php echo $tripHeaderImage; ?>"/></a>
 
                             <?php
                             if (isset($this->session->userdata["user_id"]) && $hValue["trip_user_id"] != @$this->session->userdata["user_id"])
@@ -181,21 +181,21 @@
                                 }
                                 ?>
                                 <div class="hover-like-block like-status-block">                            
-                                    <a href="#" class="btn btn-default <?php echo $to_like; ?>" id="add" rel="<?php echo base_url('trip/tripToggleLikeAjax/add/' . $hValue["url_key"]); ?>"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;Like</a>
-                                    <a href="#" onclick="return confirm('Are you sure to unlike?');" class="btn btn-success <?php echo $liked; ?>" id="remove" rel="<?php echo base_url('trip/tripToggleLikeAjax/remove/' . $hValue["url_key"]); ?>"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;Liked</a>
+                                    <a itemprop="url" href="#" class="btn btn-default <?php echo $to_like; ?>" id="add" rel="<?php echo base_url('trip/tripToggleLikeAjax/add/' . $hValue["url_key"]); ?>"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;Like</a>
+                                    <a itemprop="url" href="#" onclick="return confirm('Are you sure to unlike?');" class="btn btn-success <?php echo $liked; ?>" id="remove" rel="<?php echo base_url('trip/tripToggleLikeAjax/remove/' . $hValue["url_key"]); ?>"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;Liked</a>
                                 </div>
                                 <?php
                             }
                             ?>
                         </div>
 
-                        <a href="<?php echo $link; ?>"><h4 class="margin-bottom-20"><?php echo $trip_title; ?></h4></a>
+                        <a itemprop="url" href="<?php echo $link; ?>"><h4 class="margin-bottom-20"><?php echo $trip_title; ?></h4></a>
                         <p>By: &nbsp;&nbsp;
                             <?php
                             $facebookUserImage = getUserImage($hValue["trip_user_id"], $hValue["user_facebook_id"], NULL, 70, 70);
                             ?>
                             <span><img src="<?php echo $facebookUserImage; ?>" alt="<?php echo $user_full_name; ?>" class="img-circle trip-bottom-user-img lazy" data-original="<?php echo $facebookUserImage; ?>"/></span>
-                            &nbsp;&nbsp;<a href="<?php echo getPublicProfileUrl($hValue["username"]); ?>"><span><?php echo $user_full_name; ?></span></a>
+                            &nbsp;&nbsp;<a itemprop="url" href="<?php echo getPublicProfileUrl($hValue["username"]); ?>"><span><?php echo $user_full_name; ?></span></a>
                         </p>
                     </div>
                     <?php
@@ -214,7 +214,7 @@
             {
                 ?>
                 <div class="text-center clearfix margin-top-40">
-                    <a href="<?php echo base_url('trip/search?looking_for=host'); ?>" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;View More</a>
+                    <a itemprop="url" href="<?php echo base_url('trip/search?looking_for=host'); ?>" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-th"></span>&nbsp;&nbsp;View More</a>
                 </div>
                 <?php
             }
@@ -228,15 +228,15 @@
 <div class="jumbotron margin-top-40 text-center">
     <h2>Connect with us: </h2>
     <ul class="connect-with-us-ul margin-top-20">
-        <li><a href="<?php echo FACEBOOK_SOCIAL_LINK; ?>" title="Facebook" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/facebook.png"); ?>" alt="Facebook" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/facebook.png"); ?>"/></a></li>
-        <li><a href="<?php echo TWITTER_SOCIAL_LINK; ?>" title="Twitter" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/twitter.png"); ?>" alt="Twitter" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/twitter.png"); ?>"/></a></li>
-        <li><a href="<?php echo PINTEREST_SOCIAL_LINK; ?>" title="Pinterest" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/pinterest.png"); ?>" alt="Pinterest" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/pinterest.png"); ?>"/></a></li>
-        <li><a href="<?php echo GPLUS_SOCIAL_LINK; ?>" title="Google Plus" target="_blank" rel="publisher"><img src="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>" alt="Google Plus" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>"/></a></li>
+        <li><a itemprop="url" href="<?php echo FACEBOOK_SOCIAL_LINK; ?>" title="Facebook" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/facebook.png"); ?>" alt="Facebook" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/facebook.png"); ?>"/></a></li>
+        <li><a itemprop="url" href="<?php echo TWITTER_SOCIAL_LINK; ?>" title="Twitter" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/twitter.png"); ?>" alt="Twitter" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/twitter.png"); ?>"/></a></li>
+        <li><a itemprop="url" href="<?php echo PINTEREST_SOCIAL_LINK; ?>" title="Pinterest" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/pinterest.png"); ?>" alt="Pinterest" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/pinterest.png"); ?>"/></a></li>
+        <li><a itemprop="url" href="<?php echo GPLUS_SOCIAL_LINK; ?>" title="Google Plus" target="_blank" rel="publisher"><img src="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>" alt="Google Plus" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>"/></a></li>
     </ul>
 </div>
 
 <div class="container text-center">
-    <p><a href="<?php echo SITE_URL; ?>" target="_blank"><?php echo SITE_NAME; ?></a> is platform for all the travelers and hosts out there 
+    <p><a itemprop="url" href="<?php echo SITE_URL; ?>" target="_blank"><?php echo SITE_NAME; ?></a> is platform for all the travelers and hosts out there 
         who would either want to go out on a vacation but do not have enough travelers within the group or for the people who would love to serve 
         tourists in their city by becoming superb hosts to them. People can also list out their empty guest-house or rooms on <?php echo SITE_NAME; ?> 
         which they would want to be rented out to travelers in their city/town. Either way it is super fun way to meet like-minded people from around the world who 
