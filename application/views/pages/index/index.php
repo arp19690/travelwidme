@@ -12,9 +12,7 @@
                 <h2><strong>I am looking for:</strong></h2>
 
                 <ul class="nav nav-pills col-lg-offset-4 col-sm-offset-5 col-xs-offset-2 margin-bottom-20 margin-top-20 ">
-                    <!--<li><a href="#" id="hosts"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Hosts</a></li>-->
                     <li class="active"><a href="#" id="travel"><span class="glyphicon glyphicon-plane"></span>&nbsp;&nbsp;Travelers</a></li>
-                    <!--<li><a href="#" id="hosts"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;A room to stay</a></li>-->
                 </ul>
 
                 <div class="input-group">
@@ -29,7 +27,7 @@
     </div>
 </div>
 
-<div class="container text-center">
+<div class="container text-center below-slider">
     <div class="row">
         <div class="col-lg-4">
             <span class="glyphicon glyphicon-globe glyphicon-font-large"></span>
