@@ -228,6 +228,7 @@
             $data["pagination"] = $pagination;
 
             $data["page_title"] = "My Blogs";
+            $data['meta_title'] = 'My Blogs | ' . SITE_NAME;
             $this->template->write_view("content", "pages/blog/my-blogs", $data);
             $this->template->render();
         }

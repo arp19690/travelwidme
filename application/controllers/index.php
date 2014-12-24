@@ -80,6 +80,7 @@
                 }
                 else
                 {
+                    $data['meta_title'] = 'Login | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/index/login", $data);
                     $this->template->render();
                 }
@@ -179,6 +180,7 @@
                 }
                 else
                 {
+                    $data['meta_title'] = 'Register | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/index/register", $data);
                     $this->template->render();
                 }
@@ -278,6 +280,7 @@
                 }
                 else
                 {
+                    $data['meta_title'] = 'Forgot Password | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/index/forgot-password", $data);
                     $this->template->render();
                 }
@@ -329,6 +332,7 @@
         {
             $data = array();
 
+            $data['meta_title'] = 'Page Not Found | ' . SITE_NAME;
             $this->template->write_view("content", "pages/index/page-not-found", $data);
             $this->template->render();
         }
@@ -381,3 +385,4 @@
         }
 
     }
+    

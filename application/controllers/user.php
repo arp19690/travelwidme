@@ -59,7 +59,7 @@
             {
                 $record = $model->fetchSelectedData("*", TABLE_USERS, array("user_id" => $user_id));
 
-                $data["meta_title"] = $this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"] . " | " . SITE_NAME;
+                $data["meta_title"] = ucwords($this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"]) . " | " . SITE_NAME;
                 $user_bio = $record[0]["user_bio"];
                 if (!empty($user_bio))
                     $data["meta_description"] = getNWordsFromString($user_bio, 22);
@@ -85,7 +85,7 @@
             $user_id = $this->session->userdata["user_id"];
 
             $record = $model->fetchSelectedData("*", TABLE_USERS, array("user_id" => $user_id));
-            $data["meta_title"] = $this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"] . " | " . SITE_NAME;
+            $data["meta_title"] = ucwords($this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"]) . " | " . SITE_NAME;
             $user_bio = $record[0]["user_bio"];
             if (!empty($user_bio))
                 $data["meta_description"] = getNWordsFromString($user_bio, 30);
@@ -115,7 +115,7 @@
                     if (isset($this->session->userdata["user_id"]))
                     {
 //                        $is_friend_record = $model->is_exists("friend_id, is_accepted", TABLE_FRIENDS, array("sent_from" => $this->session->userdata["user_id"], "sent_to" => $record["user_id"]));
-                        $is_friend_record = $custom_model->isFriend($this->session->userdata["user_id"], $record["user_id"],"friend_id, is_accepted");
+                        $is_friend_record = $custom_model->isFriend($this->session->userdata["user_id"], $record["user_id"], "friend_id, is_accepted");
                         if (!empty($is_friend_record))
                         {
                             $is_friend = TRUE;
@@ -340,7 +340,6 @@
                     $is_exists = $model->is_exists("ru_id", TABLE_REPORT_USERS, array("from_user_id" => $user_id, "to_user_id" => $getUserRecord[0]["user_id"]));
                     if (empty($is_exists))
                     {
-
                         $data_array = array(
                             "from_user_id" => $user_id,
                             "to_user_id" => $getUserRecord[0]["user_id"],
@@ -402,6 +401,7 @@
                     }
                 }
 
+                $data['meta_title'] = 'Change Password | ' . SITE_NAME;
                 $this->template->write_view("content", "pages/user/change-password", $data);
                 $this->template->render();
             }
@@ -501,6 +501,7 @@
                 $user_name_records = $model->fetchSelectedData("user_id, first_name, last_name", TABLE_USERS, array('username' => $username));
                 if (empty($user_name_records))
                 {
+                    $data['meta_title'] = 'Page Not Found | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/index/page-not-found", $data);
                     $this->template->render();
                 }
@@ -533,6 +534,7 @@
                 $data['record'] = $record;
                 $data['pagination'] = $pagination;
                 $data['page_title'] = $page_title;
+                $data['meta_title'] = $page_title . ' | ' . SITE_NAME;
 
                 $this->template->write_view("content", "pages/user/my-albums", $data);
                 $this->template->render();
@@ -650,6 +652,7 @@
                 {
                     $data['album_key'] = $album_key;
                     $data['page_title'] = "Upload Photos";
+                    $data['meta_title'] = 'Upload Photos | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/user/upload-photos", $data);
                     $this->template->render();
                 }
@@ -731,6 +734,7 @@
                 $data['pagination'] = $pagination;
                 $data['user_id'] = $owner_id;
                 $data['page_title'] = stripslashes($album_name);
+                $data['meta_title'] = stripslashes($album_name) . ' | ' . SITE_NAME;
                 $data['album_key'] = stripslashes($album_key);
                 $data['album_description'] = stripslashes($album_description);
                 $this->template->write_view("content", "pages/user/view-album", $data);
@@ -762,6 +766,7 @@
                     $data['totalLikesAndDislikes'] = $getTotalLikesAndDislikes;
                     $data['photo_pagination'] = $photo_pagination_links;
                     $data['page_title'] = stripslashes($user_record[0]['full_name']) . "'s Photos";
+                    $data['meta_title'] = $data['page_title'] . ' | ' . SITE_NAME;
                     $data['owner_username'] = $user_record[0]['username'];
                     $data['photo_description'] = stripslashes($record[0]['photo_description']);
                     $this->template->write_view("content", "pages/user/view-photo", $data);
@@ -975,3 +980,4 @@
         }
 
     }
+    
