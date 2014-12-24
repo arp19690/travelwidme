@@ -6,6 +6,10 @@
     {
         extract($post);
     }
+   else if ($this->session->flashdata('post'))
+    {
+        extract($this->session->flashdata('post'));
+    }
     else
     {
         $full_name = "";

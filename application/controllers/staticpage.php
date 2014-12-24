@@ -63,25 +63,25 @@
                     if ($captcha_answer_system != $captcha_answer_user)
                     {
                         // wrong captcha
-                        $data['post'] = $arr;
                         $this->session->set_flashdata('error', 'Please input correct answer');
-                        $this->template->write_view("content", "pages/staticpage/contact", $data);
-                        $this->template->render();
+                        $this->session->set_flashdata('post', $arr);
+                        redirect(base_url('contact-us'));
                     }
                     else
                     {
                         $model = new Common_model();
-                        $request_id = substr(getEncryptedString($arr['user_email'] . USER_IP . time()), 0, 8);
+                        $request_id = strtoupper(substr(getEncryptedString($arr['user_email'] . USER_IP . time()), 0, 8));
 
                         $is_request_id_exists = $model->is_exists('wc_id, wc_ipaddress', TABLE_WEBSITE_CONTACT, array('wc_request_id' => $request_id));
                         if (!empty($is_request_id_exists))
                         {
-                            $request_id = substr(getEncryptedString($is_request_id_exists[0]['wc_request_id'] . $is_request_id_exists[0]['wc_ipaddress'] . $arr['user_email'] . USER_IP . time()), 0, 8);
+                            $request_id = substr(getEncryptedString($is_request_id_exists[0]['wc_id'] . $is_request_id_exists[0]['wc_ipaddress'] . $arr['user_email'] . USER_IP . time()), 0, 8);
                         }
 
-                        $arr["wc_request_id"] = $request_id;
+                        $arr["wc_request_id"] = strtoupper($request_id);
                         $arr["wc_ipaddress"] = $this->session->userdata["ip_address"];
                         $arr["user_agent"] = $this->session->userdata["user_agent"];
+//                        prd($arr);
 
                         $model->insertData(TABLE_WEBSITE_CONTACT, $arr);
 
@@ -108,7 +108,7 @@
                         }
 
                         $this->session->set_flashdata('success', 'Your message has been delivered successfully');
-                        redirect('staticpage/contact');
+                        redirect(base_url('contact-us'));
                     }
                 }
             }
@@ -181,10 +181,11 @@
             fclose($file);
             die;
         }
-        
+
         public function cronjob()
         {
             $this->updateSitemap();
         }
+
     }
     
