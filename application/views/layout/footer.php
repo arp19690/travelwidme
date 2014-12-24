@@ -66,7 +66,7 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
 <script type='text/javascript' src='<?php echo base_url(JS_PATH . "/custom.js"); ?>'></script>
 <script>
                     // to check if unread messages, new connect requests, so that the message icon in the navbar could blink
