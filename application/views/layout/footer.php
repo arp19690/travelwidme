@@ -68,13 +68,18 @@
 </footer>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
 <script type='text/javascript' src='<?php echo base_url(JS_PATH . "/custom.js"); ?>'></script>
-<script>
-                    // to check if unread messages, new connect requests, so that the message icon in the navbar could blink
-                    checkNavbarBlinkNotification('<?php echo base_url('user/checkMessageNotificationAjax'); ?>', '#nav-messages');
-                    checkNavbarBlinkNotification('<?php echo base_url('user/checkConnectRequestAjax'); ?>', '#nav-connect-requests');
-</script>
-
 <?php
+    if (isset($this->session->userdata["user_id"]))
+    {
+        ?>
+        <script>
+                            // to check if unread messages, new connect requests, so that the message icon in the navbar could blink
+                            checkNavbarBlinkNotification('<?php echo base_url('user/checkMessageNotificationAjax'); ?>', '#nav-messages');
+                            checkNavbarBlinkNotification('<?php echo base_url('user/checkConnectRequestAjax'); ?>', '#nav-connect-requests');
+        </script>
+        <?php
+    }
+
     if (USER_IP != '127.0.0.1')
     {
         ?>
