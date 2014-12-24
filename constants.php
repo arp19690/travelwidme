@@ -18,7 +18,7 @@
     }
 
     define("SITE_NAME", "TravelWid.Me");
-    define("SITE_TAGLINE", "Exploring One-Point-Five Billion Inches");
+    define("SITE_TAGLINE", "Exploring the world together");
     define("SITE_TITLE", SITE_NAME . " | " . SITE_TAGLINE);
     define("SITE_EMAIL", "support@travelwid.me");
     define("SITE_EMAIL_GMAIL", "travelwiddotme@gmail.com");
