@@ -12,9 +12,7 @@
                 <h2><strong>I am looking for:</strong></h2>
 
                 <ul class="nav nav-pills col-lg-offset-4 col-sm-offset-5 col-xs-offset-2 margin-bottom-20 margin-top-20 ">
-                    <!--<li><a href="#" id="hosts"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Hosts</a></li>-->
                     <li class="active"><a href="#" id="travel"><span class="glyphicon glyphicon-plane"></span>&nbsp;&nbsp;Travelers</a></li>
-                    <!--<li><a href="#" id="hosts"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;A room to stay</a></li>-->
                 </ul>
 
                 <div class="input-group">
@@ -29,7 +27,7 @@
     </div>
 </div>
 
-<div class="container text-center">
+<div class="container text-center below-slider">
     <div class="row">
         <div class="col-lg-4">
             <span class="glyphicon glyphicon-globe glyphicon-font-large"></span>
@@ -57,7 +55,7 @@
             if (!isset($this->session->userdata["user_id"]))
             {
                 ?>
-                <a href="<?php echo base_url("login/facebook?next=" . current_url()); ?>" class="btn btn-primary btn-lg margin-top-20 facebook-blue-btn" title="Login with facebook"><span class="facebook-initial">f</span>&nbsp;&nbsp;Login with facebook</a>
+                <a href="<?php echo base_url("login/facebook"); ?>" class="btn btn-primary btn-lg margin-top-20 facebook-blue-btn" title="Login with facebook"><span class="facebook-initial">f</span>&nbsp;&nbsp;Login with facebook</a>
                 <?php
             }
         ?>
@@ -233,7 +231,7 @@
         <li><a href="<?php echo FACEBOOK_SOCIAL_LINK; ?>" title="Facebook" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/facebook.png"); ?>" alt="Facebook" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/facebook.png"); ?>"/></a></li>
         <li><a href="<?php echo TWITTER_SOCIAL_LINK; ?>" title="Twitter" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/twitter.png"); ?>" alt="Twitter" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/twitter.png"); ?>"/></a></li>
         <li><a href="<?php echo PINTEREST_SOCIAL_LINK; ?>" title="Pinterest" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/pinterest.png"); ?>" alt="Pinterest" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/pinterest.png"); ?>"/></a></li>
-        <li><a href="<?php echo GPLUS_SOCIAL_LINK; ?>" title="Google Plus" target="_blank"><img src="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>" alt="Google Plus" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>"/></a></li>
+        <li><a href="<?php echo GPLUS_SOCIAL_LINK; ?>" title="Google Plus" target="_blank" rel="publisher"><img src="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>" alt="Google Plus" class="lazy" data-original="<?php echo base_url(IMAGES_PATH . "/social/gplus.png"); ?>"/></a></li>
     </ul>
 </div>
 

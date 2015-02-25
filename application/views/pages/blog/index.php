@@ -22,8 +22,9 @@
                     {
 //                    prd($value);
                         $blog_id = $value["blog_id"];
+                        $blog_url_key= $value["blog_url_key"];
                         $title = stripslashes($value["blog_title"]);
-                        $link = base_url('blog/read/' . $blog_id);
+                        $link = base_url('blog/read/' . $blog_url_key);
                         $description = stripslashes(getNWordsFromString(strip_tags($value["blog_content"]), 100));
                         $date = date("F d, Y", strtotime($value["blog_timestamp"]));
                         $author = "Guest";
@@ -77,13 +78,7 @@
         </section> <!-- /main content -->
 
         <section class="col-lg-3 margin-top-40">
-            <div class="chitika-ad">
-                <?php echo getChitikaAd(); ?>
-            </div>
 
-            <div class="chitika-ad margin-top-20">
-                <?php echo getChitikaAd(); ?>
-            </div>
         </section>
     </div>
 </div> <!-- /container -->

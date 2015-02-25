@@ -25,7 +25,7 @@
 
             $loginUrl = $facebook->getLoginUrl(array(
                 "redirect_uri" => $redirect_uri,
-                "scope" => "email, user_photos, user_birthday, user_about_me",
+                "scope" => "email, user_photos, user_friends",
             ));
 
             return $loginUrl;
@@ -74,6 +74,8 @@
                     // Proceed knowing you have a logged in user who's authenticated.
                     $user_profile = $facebook->api('/me');
 //                    prd($user_profile);
+                    $friends = $facebook->api('/me/friends'); // Get Friends
+                    $total_fb_friends = $friends['summary']['total_count'];
 
                     $model = new Common_model();
                     if (isset($user_profile["username"]))
@@ -129,6 +131,7 @@
                                 "user_status" => "1",
                                 "user_facebook_id" => $user_profile["id"],
                                 "user_facebook_username" => $facebook_username,
+                                "user_facebook_friends_array" => json_encode($friends),
                                 "user_facebook_array" => json_encode($user_profile),
                                 "user_ipaddress" => USER_IP,
                                 "user_agent" => USER_AGENT,
@@ -165,7 +168,7 @@
 
                             $returnArray["flash_type"] = "success";
                             $returnArray["flash_message"] = "<strong>Welcome!</strong> Please complete all your account details.";
-                            $returnArray["return_url"] = "myAccount";
+                            $returnArray["return_url"] = "my-account";
                             $returnArray["session_array"] = $session_data_array;
                         }
                     }
@@ -180,6 +183,8 @@
                             "user_status" => "1",
                             "user_facebook_id" => $user_profile["id"],
                             "user_facebook_username" => $facebook_username,
+                            "user_facebook_friends_array" => json_encode($friends),
+                            "user_facebook_array" => json_encode($user_profile),
                         );
                         $model->updateData(TABLE_USERS, $update_data_array, array("user_email" => $is_email_exists[0]["user_email"]));
                         $user_id = $is_email_exists[0]['user_id'];
@@ -354,3 +359,4 @@
         }
 
     }
+    

@@ -45,7 +45,7 @@
                     if (isset($this->session->userdata["user_id"]))
                     {
                         ?>
-                                                                                                                                                                                                <!--<li><a href="<?php echo base_url("user/myWall"); ?>" title="Wall"><span class="glyphicon glyphicon-th-large"></span></a></li>-->
+                                                                                                                                                                                                        <!--<li><a href="<?php echo base_url("user/myWall"); ?>" title="Wall"><span class="glyphicon glyphicon-th-large"></span></a></li>-->
                         <li><a href="<?php echo base_url("messages"); ?>" title="Messages" id='nav-messages'><span class="glyphicon glyphicon-comment"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Messages</span></a></li>
                         <li><a href="<?php echo base_url("user/connectRequests"); ?>" title="Connect Requests" id='nav-connect-requests'><span class="glyphicon glyphicon-link"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Connect Requests</span></a></li>
 
@@ -59,13 +59,13 @@
                                 <li class="divider"></li>
                                 <li><a href="<?php echo base_url('trip/myTrips'); ?>"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;My Trips</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo base_url('myBlogs'); ?>"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;My Blogs</a></li>
+                                <li><a href="<?php echo base_url('my-blogs'); ?>"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;My Blogs</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo base_url('myAlbums'); ?>"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;My Albums</a></li>
+                                <li><a href="<?php echo base_url('my-albums'); ?>"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;My Albums</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo base_url('myAccount'); ?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;My Account</a></li>
+                                <li><a href="<?php echo base_url('my-account'); ?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;My Account</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo base_url('changePassword'); ?>"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;Change Password</a></li>
+                                <li><a href="<?php echo base_url('change-password'); ?>"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;Change Password</a></li>
                                 <li class="divider"></li>
                                 <li><a href="<?php echo base_url('logout'); ?>"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Logout</a></li>
                             </ul>
@@ -74,11 +74,15 @@
                     }
                     else
                     {
+                        $login_url = base_url('login');
+                        if ($path != 'index/index')
+                        {
+                            $login_url = base_url("login?next=" . current_url());
+                        }
                         ?>
                         <li><a href="<?php echo base_url("how-it-works"); ?>" title="How it works?">How it works?</a></li>
                         <li><a href="<?php echo base_url("register"); ?>" title="Sign Up">Sign Up</a></li>
-                        <li><a href="<?php echo base_url("login?next=" . current_url()); ?>" title="Login">Login</a></li>
-                        <!--<li><a href="<?php echo base_url("login/facebook?next=" . current_url()); ?>" title="Login with Facebook" id="fbLoginButton">Login with Facebook</a></li>-->
+                        <li><a href="<?php echo $login_url; ?>" title="Login">Login</a></li>
                         <?php
                     }
                 ?>

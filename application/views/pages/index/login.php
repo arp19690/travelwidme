@@ -30,7 +30,7 @@
                 <div class="margin-bottom-20 clearfix">
 
                     <label for="user_email" >Email <span class="required">*</span></label>
-                    <input class="form-control required" name="user_email" id="user_email" type="text" required="required" placeholder="Email" value='<?php echo $blog_title; ?>'/>
+                    <input class="form-control required" name="user_email" id="user_email" type="email" required="required" placeholder="Email" value='<?php echo $blog_title; ?>'/>
 
                 </div>
 

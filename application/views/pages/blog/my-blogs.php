@@ -18,10 +18,10 @@
                                 {
                                     ?>
                                     <li class="">
-                                        <a href="<?php echo base_url('blog/read/' . $value['blog_id']); ?>" class=''><span class='glyphicon glyphicon-file'></span>&nbsp;&nbsp;<?php echo $value["blog_title"]; ?></a><span class='time'>(<?php echo getTimeAgo(strtotime($value["blog_timestamp"])); ?>)</span>
+                                        <a href="<?php echo base_url('blog/read/' . $value['blog_url_key']); ?>" class=''><span class='glyphicon glyphicon-file'></span>&nbsp;&nbsp;<?php echo $value["blog_title"]; ?></a><span class='time'>(<?php echo getTimeAgo(strtotime($value["blog_timestamp"])); ?>)</span>
                                         <div class='pull-right'>
-                                            <a href='<?php echo base_url('blog/read/' . $value["blog_id"]); ?>' title='View Blog' class='black'><span class='glyphicon glyphicon-search'></span></a>&nbsp;&nbsp;
-                                            <a href='<?php echo base_url('blog/delete/' . $value["blog_id"]); ?>' title='Remove Permanently' onclick="return confirm('Are you sure to remove?');" class='black'><span class='glyphicon glyphicon-trash'></span></a>
+                                            <a href='<?php echo base_url('blog/read/' . $value["blog_url_key"]); ?>' title='View Blog' class='black'><span class='glyphicon glyphicon-search'></span></a>&nbsp;&nbsp;
+                                            <a href='<?php echo base_url('blog/delete/' . $value["blog_url_key"]); ?>' title='Remove Permanently' onclick="return confirm('Are you sure to remove?');" class='black'><span class='glyphicon glyphicon-trash'></span></a>
                                         </div>
                                     </li>
                                     <?php
@@ -53,12 +53,7 @@
             </div>
 
             <div class="col-lg-5 text-right pull-right">
-                <div class="chitika-ad">
-                    <?php echo getChitikaAd(); ?>
-                </div>
-                <div class="chitika-ad margin-top-20">
-                    <?php echo getChitikaAd(); ?>
-                </div>
+
             </div>
         </div>        
     </div>

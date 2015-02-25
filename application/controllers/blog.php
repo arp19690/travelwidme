@@ -43,22 +43,22 @@
             $this->template->render();
         }
 
-        public function read($blog_id)
+        public function read($blog_url_key)
         {
-            if ($blog_id)
+            if ($blog_url_key)
             {
                 $model = new Common_model();
-                $record = $model->fetchSelectedData("*", TABLE_BLOGS, array("blog_id" => $blog_id, "blog_status" => "1"));
+                $record = $model->fetchSelectedData("*", TABLE_BLOGS, array("blog_url_key" => $blog_url_key, "blog_status" => "1"));
                 if (!empty($record))
                 {
                     $data["record"] = $record[0];
 
-                    $recent_blogs = $model->fetchSelectedData("blog_id, blog_title", TABLE_BLOGS, array("blog_status" => "1", "blog_id != " => $blog_id), "blog_id", "rand()");
+                    $recent_blogs = $model->fetchSelectedData("blog_id, blog_title", TABLE_BLOGS, array("blog_status" => "1", "blog_url_key != " => $blog_url_key), "blog_url_key", "rand()");
                     $data["recent_blogs"] = $recent_blogs;
 
                     $breadcrumbArray = array(
                         "Blogs" => base_url("blog"),
-                        ucwords($record[0]["blog_title"]) => base_url("blog/read/" . $record[0]["blog_id"]),
+                        ucwords($record[0]["blog_title"]) => base_url("blog/read/" . $record[0]["blog_url_key"]),
                     );
                     $data["breadcrumbArray"] = $breadcrumbArray;
                     $data["meta_title"] = ucwords($record[0]["blog_title"]) . " | " . SITE_NAME;
@@ -126,6 +126,7 @@
                         "blog_status" => "1",
                         "user_ipaddress" => USER_IP,
                         "user_agent" => USER_AGENT,
+                        "blog_url_key" => getUniqueBlogURLKey(),
                     );
                     $model->insertData(TABLE_BLOGS, $data_array);
                     $blog_id = $this->db->insert_id();
@@ -186,16 +187,17 @@
 //            }
         }
 
-        public function delete($blog_id)
+        public function delete($blog_url_key)
         {
-            if (isset($this->session->userdata["user_id"]) && $blog_id)
+            if (isset($this->session->userdata["user_id"]) && $blog_url_key)
             {
                 $user_id = $this->session->userdata["user_id"];
                 $model = new Common_model();
-                @unlink(BLOG_IMG_PATH . "/" . getEncryptedString($blog_id) . ".jpg");
-                $model->deleteData(TABLE_BLOGS, array("user_id" => $user_id, "blog_id" => $blog_id));
+                $blog_record = $model->fetchSelectedData('blog_id', TABLE_BLOGS, array('blog_url_key' => $blog_url_key));
+                @unlink(BLOG_IMG_PATH . "/" . getEncryptedString($blog_record[0]['blog_id']) . ".jpg");
+                $model->deleteData(TABLE_BLOGS, array("user_id" => $user_id, "blog_url_key" => $blog_url_key));
                 $this->session->set_flashdata('success', 'Your blog has been deleted permanently');
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -226,8 +228,10 @@
             $data["pagination"] = $pagination;
 
             $data["page_title"] = "My Blogs";
+            $data['meta_title'] = 'My Blogs | ' . SITE_NAME;
             $this->template->write_view("content", "pages/blog/my-blogs", $data);
             $this->template->render();
         }
 
     }
+    

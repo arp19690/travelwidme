@@ -108,7 +108,7 @@
         ?>
 
         <div class="chitika-ad margin-top-40">
-            <?php echo getChitikaAd(); ?>
+            
         </div>
     </aside> <!-- /sidebar -->         
 </div>

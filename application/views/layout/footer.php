@@ -13,9 +13,9 @@
                     <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
                     <li><a href="<?php echo base_url('register'); ?>">Sign Up</a></li>
                     <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
-                    <li><a href="<?php echo base_url('contactUs'); ?>">Contact us</a></li>
+                    <li><a href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
                     <li><a href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
-                    <li><a href="<?php echo base_url('privacy'); ?>">Privacy policy</a></li>
+                    <li><a href="<?php echo base_url('privacy-policy'); ?>">Privacy policy</a></li>
                     <li><a href="<?php echo base_url('terms'); ?>">Terms &amp; conditions</a></li>
                 </ul>
             </div>
@@ -24,8 +24,8 @@
         <div class="col-lg-4">
             <h2>Twitter Feed:</h2>
             <div>
-                <a class="twitter-timeline"  href="https://twitter.com/TravelWidDotMe"  data-widget-id="459759619611455489">Tweets by @TravelWidDotMe</a>
-                <script>!function(d, s, id) {
+                <a class="twitter-timeline"  href="<?php echo TWITTER_SOCIAL_LINK; ?>"  data-widget-id="459759619611455489">Tweets by @TravelWid.Me</a>
+                <script>!function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
                         if (!d.getElementById(id)) {
                             js = d.createElement(s);
@@ -55,53 +55,56 @@
             <ul class="col-lg-6 col-xs-12 text-right footer-links">
                 <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
                 <li>|</li>
-                <li><a href="<?php echo base_url('contactUs'); ?>">Contact us</a></li>
+                <li><a href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
                 <li>|</li>
                 <li><a href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
                 <li>|</li>
-                <li><a href="<?php echo base_url('privacy'); ?>">Privacy policy</a></li>
+                <li><a href="<?php echo base_url('privacy-policy'); ?>">Privacy policy</a></li>
                 <li>|</li>
                 <li><a href="<?php echo base_url('terms'); ?>">Terms &amp; conditions</a></li>
             </ul>
         </div>
     </div>
 </footer>
-
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="<?php echo base_url(BOOTSTRAP_PATH . "/js/bootstrap.min.js"); ?>"></script>
-
-<script type='text/javascript' src='<?php echo base_url(JS_PATH . "/jquery.lazyload.min.js"); ?>'></script>
-<script type='text/javascript' src='<?php echo base_url(JS_PATH . "/jquery.colorbox.min.js"); ?>'></script>
-<script type='text/javascript' src='<?php echo base_url(JS_PATH . "/jquery.validate.js"); ?>'></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
 <script type='text/javascript' src='<?php echo base_url(JS_PATH . "/custom.js"); ?>'></script>
-<script>
-    // to check if unread messages, new connect requests, so that the message icon in the navbar could blink
-    checkNavbarBlinkNotification('<?php echo base_url('user/checkMessageNotificationAjax'); ?>', '#nav-messages');
-    checkNavbarBlinkNotification('<?php echo base_url('user/checkConnectRequestAjax'); ?>', '#nav-connect-requests');
-</script>
+<?php
+    if (isset($this->session->userdata["user_id"]))
+    {
+        ?>
+        <script>
+                            // to check if unread messages, new connect requests, so that the message icon in the navbar could blink
+                            checkNavbarBlinkNotification('<?php echo base_url('user/checkMessageNotificationAjax'); ?>', '#nav-messages');
+                            checkNavbarBlinkNotification('<?php echo base_url('user/checkConnectRequestAjax'); ?>', '#nav-connect-requests');
+        </script>
+        <?php
+    }
 
-<!--Google Analytics START-->
-<script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    if (USER_IP != '127.0.0.1')
+    {
+        ?>
+        <!--Google Analytics START-->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-51020854-1', 'travelwid.me');
-    ga('send', 'pageview');
-
-</script>
-<!--Google Analytics END-->
+            ga('create', 'UA-51020854-1', 'travelwid.me');
+            ga('require', 'displayfeatures');
+            ga('send', 'pageview');
+        </script>
+        <!--Google Analytics END-->
+        <?php
+    }
+?>
 
 </body>
 </html>

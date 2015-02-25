@@ -17,3 +17,4 @@
     define("TABLE_PHOTOS", "photos");
     define("TABLE_PHOTO_COMMENTS", "photo_comments");
     define("TABLE_PHOTO_LIKES_DISLIKES", "photo_likes_dislikes");
+    define("TABLE_EMAILS_SENT", "emails_sent");

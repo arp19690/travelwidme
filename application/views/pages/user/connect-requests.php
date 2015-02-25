@@ -68,12 +68,7 @@
             </div>
 
             <div class="col-lg-5 text-right pull-right">
-                <div class="chitika-ad">
-                    <?php echo getChitikaAd(); ?>
-                </div>
-                <div class="chitika-ad margin-top-20">
-                    <?php echo getChitikaAd(); ?>
-                </div>
+                
             </div>
         </div>
     </div>

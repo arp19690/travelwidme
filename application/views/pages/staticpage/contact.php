@@ -6,6 +6,10 @@
     {
         extract($post);
     }
+   else if ($this->session->flashdata('post'))
+    {
+        extract($this->session->flashdata('post'));
+    }
     else
     {
         $full_name = "";
@@ -58,12 +62,7 @@
         </div>
 
         <div class="col-lg-4 col-xs-12">
-            <div class="chitika-ad">
-                <?php echo getChitikaAd(); ?>
-            </div>
-            <div class="chitika-ad margin-top-20">
-                <?php echo getChitikaAd(); ?>
-            </div>
+            
         </div>
     </div>
 </div>

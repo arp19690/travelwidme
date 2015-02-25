@@ -27,6 +27,7 @@
             $data["record"] = $custom_model->getInboxList($user_id);
 
             $data["page_title"] = "Messages";
+            $data['meta_title'] = 'Messages | ' . SITE_NAME;
             $data["active_class"] = "inbox";
             $this->template->write_view("content", "pages/messages/list", $data);
             $this->template->render();
@@ -43,6 +44,7 @@
             $data["record"] = $custom_model->getOutboxList($user_id);
 
             $data["page_title"] = "Outbox";
+            $data['meta_title'] = 'Outbox | ' . SITE_NAME;
             $data["active_class"] = "outbox";
             $this->template->write_view("content", "pages/messages/list", $data);
             $this->template->render();
@@ -60,7 +62,7 @@
                 $is_username_valid = $model->is_exists('user_id', TABLE_USERS, array('username' => $username));
                 if (!empty($is_username_valid))
                 {
-                    $message_from=$is_username_valid[0]['user_id'];
+                    $message_from = $is_username_valid[0]['user_id'];
                     $model->updateData(TABLE_MESSAGES, array("message_read" => "1"), array("message_from" => $message_from, "message_to" => $user_id));
 
                     $getUserNameRecord = $model->fetchSelectedData("first_name,last_name,username", TABLE_USERS, array("user_id" => $message_from));
@@ -78,7 +80,7 @@
                 }
                 else
                 {
-                    redirect(base_url('myAccount'));
+                    redirect(base_url('my-account'));
                 }
             }
             else
@@ -154,3 +156,4 @@
         }
 
     }
+    

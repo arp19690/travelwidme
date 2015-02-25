@@ -1,5 +1,10 @@
 <?php
 
+    if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip'))
+        ob_start("ob_gzhandler");
+    else
+        ob_start();
+
     require_once 'functions.php';
     require_once 'constants.php';
     require_once 'db-constants.php';
@@ -24,7 +29,7 @@
      */
 //    $environment = 'production';
 //    if ($_SERVER["REMOTE_ADDR"] == '127.0.0.1')
-        $environment = 'development';
+    $environment = 'development';
 
     define('ENVIRONMENT', $environment);
     /*

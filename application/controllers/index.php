@@ -80,13 +80,14 @@
                 }
                 else
                 {
+                    $data['meta_title'] = 'Login | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/index/login", $data);
                     $this->template->render();
                 }
             }
             else
             {
-                redirect('myAccount');
+                redirect('my-account');
             }
         }
 
@@ -179,13 +180,14 @@
                 }
                 else
                 {
+                    $data['meta_title'] = 'Register | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/index/register", $data);
                     $this->template->render();
                 }
             }
             else
             {
-                redirect('myAccount');
+                redirect('my-account');
             }
         }
 
@@ -278,13 +280,14 @@
                 }
                 else
                 {
+                    $data['meta_title'] = 'Forgot Password | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/index/forgot-password", $data);
                     $this->template->render();
                 }
             }
             else
             {
-                redirect(base_url('changePassword'));
+                redirect(base_url('change-password'));
             }
         }
 
@@ -329,6 +332,7 @@
         {
             $data = array();
 
+            $data['meta_title'] = 'Page Not Found | ' . SITE_NAME;
             $this->template->write_view("content", "pages/index/page-not-found", $data);
             $this->template->render();
         }
@@ -381,3 +385,4 @@
         }
 
     }
+    

@@ -63,25 +63,25 @@
                     if ($captcha_answer_system != $captcha_answer_user)
                     {
                         // wrong captcha
-                        $data['post'] = $arr;
                         $this->session->set_flashdata('error', 'Please input correct answer');
-                        $this->template->write_view("content", "pages/staticpage/contact", $data);
-                        $this->template->render();
+                        $this->session->set_flashdata('post', $arr);
+                        redirect(base_url('contact-us'));
                     }
                     else
                     {
                         $model = new Common_model();
-                        $request_id = substr(getEncryptedString($arr['user_email'] . USER_IP . time()), 0, 8);
+                        $request_id = strtoupper(substr(getEncryptedString($arr['user_email'] . USER_IP . time()), 0, 8));
 
                         $is_request_id_exists = $model->is_exists('wc_id, wc_ipaddress', TABLE_WEBSITE_CONTACT, array('wc_request_id' => $request_id));
                         if (!empty($is_request_id_exists))
                         {
-                            $request_id = substr(getEncryptedString($is_request_id_exists[0]['wc_request_id'] . $is_request_id_exists[0]['wc_ipaddress'] . $arr['user_email'] . USER_IP . time()), 0, 8);
+                            $request_id = substr(getEncryptedString($is_request_id_exists[0]['wc_id'] . $is_request_id_exists[0]['wc_ipaddress'] . $arr['user_email'] . USER_IP . time()), 0, 8);
                         }
 
-                        $arr["wc_request_id"] = $request_id;
+                        $arr["wc_request_id"] = strtoupper($request_id);
                         $arr["wc_ipaddress"] = $this->session->userdata["ip_address"];
                         $arr["user_agent"] = $this->session->userdata["user_agent"];
+//                        prd($arr);
 
                         $model->insertData(TABLE_WEBSITE_CONTACT, $arr);
 
@@ -108,7 +108,7 @@
                         }
 
                         $this->session->set_flashdata('success', 'Your message has been delivered successfully');
-                        redirect('staticpage/contact');
+                        redirect(base_url('contact-us'));
                     }
                 }
             }
@@ -132,13 +132,13 @@
 
             $xml = '<?xml version = "1.0" encoding = "UTF-8"?>' . "\n";
             $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' . "\n";
-            $xml .= '<url><loc>' . base_url() . '</loc><changefreq>daily</changefreq><priority>1.00</priority></url>' . "\n";
+            $xml .= '<url><loc>' . base_url() . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>' . "\n";
 
             // all the static links
-            $static_links_without_base_url = array('contactUs', 'aboutUs', 'how-it-works', 'privacy', 'terms', 'login', 'register', 'forgotPassword');
+            $static_links_without_base_url = array('contact-us', 'about-us', 'how-it-works', 'privacy-policy', 'terms', 'login', 'register', 'forgot-password');
             foreach ($static_links_without_base_url as $slKey => $slValue)
             {
-                $xml .= '<url><loc>' . base_url($slValue) . '</loc><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . base_url($slValue) . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             // all the active trips
@@ -146,7 +146,7 @@
             foreach ($trip_records as $trKey => $trValue)
             {
                 $trip_url = getTripUrl($trValue['url_key']);
-                $xml .= '<url><loc>' . $trip_url . '</loc><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $trip_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             // all the active users
@@ -154,15 +154,15 @@
             foreach ($user_records as $urKey => $urValue)
             {
                 $public_profile_url = getPublicProfileUrl($urValue['username']);
-                $xml .= '<url><loc>' . $public_profile_url . '</loc><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $public_profile_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             // all the active blogs
-            $blog_records = $model->fetchSelectedData('blog_id', TABLE_BLOGS, array('blog_status' => '1'));
+            $blog_records = $model->fetchSelectedData('blog_url_key', TABLE_BLOGS, array('blog_status' => '1'));
             foreach ($blog_records as $brKey => $brValue)
             {
-                $blog_url = base_url('blog/read/' . $brValue['blog_id']);
-                $xml .= '<url><loc>' . $blog_url . '</loc><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $blog_url = base_url('blog/read/' . $brValue['blog_url_key']);
+                $xml .= '<url><loc>' . $blog_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             // all the view photo pages
@@ -170,7 +170,7 @@
             foreach ($photo_records as $prKey => $prValue)
             {
                 $photo_url = base_url('view/album/' . $prValue['image_name']);
-                $xml .= '<url><loc>' . $photo_url . '</loc><changefreq>daily</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $photo_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
             $xml .= '</urlset>';
@@ -182,4 +182,10 @@
             die;
         }
 
+        public function cronjob()
+        {
+            $this->updateSitemap();
+        }
+
     }
+    

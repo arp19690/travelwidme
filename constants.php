@@ -18,7 +18,7 @@
     }
 
     define("SITE_NAME", "TravelWid.Me");
-    define("SITE_TAGLINE", "Exploring One-Point-Five Billion Inches");
+    define("SITE_TAGLINE", "Exploring the world together");
     define("SITE_TITLE", SITE_NAME . " | " . SITE_TAGLINE);
     define("SITE_EMAIL", "support@travelwid.me");
     define("SITE_EMAIL_GMAIL", "travelwiddotme@gmail.com");
@@ -44,7 +44,7 @@
     define('JS_PATH', 'assets/front/js');
     define('IMAGES_PATH', 'assets/front/images');
 
-    define('NO_IMAGE_PATH', 'assets/front/images/no-image.png');
+    define('NO_IMAGE_PATH', 'assets/front/images/no-image-small.jpg');
 
     define('USER_IMG_PATH', 'resources/user-images');
     define('USER_IMG_WIDTH', 600);

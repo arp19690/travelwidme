@@ -30,6 +30,7 @@
             $data["record"] = $records;
 
             $data["page_title"] = "My Trips";
+            $data['meta_title'] = 'My Trips | ' . SITE_NAME;
             $this->template->write_view("content", "pages/trip/list", $data);
             $this->template->render();
         }
@@ -171,12 +172,12 @@
                     }
 
                     // to update the latitude and longitude of the trip destination
-                   // $this->updateLatLon($trip_id, $arr["trip_destination"]);
+                    // $this->updateLatLon($trip_id, $arr["trip_destination"]);
 
                     $this->session->set_flashdata("success", "<strong>Success!</strong> Your plan has been posted successfully. Share with your friends.");
                     redirect('trip/view/' . $url_key);
                 }
-                redirect('myAccount');
+                redirect('my-account');
             }
             else
             {
@@ -350,7 +351,7 @@
                                 $to_user_record = $model->fetchSelectedData("first_name, last_name, user_id, user_email, send_emails", TABLE_USERS, array('user_id' => $other_user_id));
                                 $to_email = $to_user_record[0]["user_email"];
                                 $to_send_emails = $to_user_record[0]["send_emails"];
-                                $to_full_name = ucwords($to_user_record[0]["first_name"]." ".$to_user_record[0]["last_name"]);
+                                $to_full_name = ucwords($to_user_record[0]["first_name"] . " " . $to_user_record[0]["last_name"]);
                                 $from_full_name = ucwords($this->session->userdata['first_name'] . " " . $this->session->userdata['last_name']);
 
                                 if ($to_send_emails == '1')
@@ -537,3 +538,4 @@
         }
 
     }
+    

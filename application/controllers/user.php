@@ -53,13 +53,13 @@
                     @$this->session->set_userdata("last_name", trim($arr["last_name"]));
                     @$this->session->set_userdata("username", trim($arr["username"]));
                 }
-                redirect('myAccount');
+                redirect(base_url('my-account'));
             }
             else
             {
                 $record = $model->fetchSelectedData("*", TABLE_USERS, array("user_id" => $user_id));
 
-                $data["meta_title"] = $this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"] . " | " . SITE_NAME;
+                $data["meta_title"] = ucwords($this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"]) . " | " . SITE_NAME;
                 $user_bio = $record[0]["user_bio"];
                 if (!empty($user_bio))
                     $data["meta_description"] = getNWordsFromString($user_bio, 22);
@@ -85,7 +85,7 @@
             $user_id = $this->session->userdata["user_id"];
 
             $record = $model->fetchSelectedData("*", TABLE_USERS, array("user_id" => $user_id));
-            $data["meta_title"] = $this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"] . " | " . SITE_NAME;
+            $data["meta_title"] = ucwords($this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"]) . " | " . SITE_NAME;
             $user_bio = $record[0]["user_bio"];
             if (!empty($user_bio))
                 $data["meta_description"] = getNWordsFromString($user_bio, 30);
@@ -115,7 +115,7 @@
                     if (isset($this->session->userdata["user_id"]))
                     {
 //                        $is_friend_record = $model->is_exists("friend_id, is_accepted", TABLE_FRIENDS, array("sent_from" => $this->session->userdata["user_id"], "sent_to" => $record["user_id"]));
-                        $is_friend_record = $custom_model->isFriend($this->session->userdata["user_id"], $record["user_id"],"friend_id, is_accepted");
+                        $is_friend_record = $custom_model->isFriend($this->session->userdata["user_id"], $record["user_id"], "friend_id, is_accepted");
                         if (!empty($is_friend_record))
                         {
                             $is_friend = TRUE;
@@ -340,7 +340,6 @@
                     $is_exists = $model->is_exists("ru_id", TABLE_REPORT_USERS, array("from_user_id" => $user_id, "to_user_id" => $getUserRecord[0]["user_id"]));
                     if (empty($is_exists))
                     {
-
                         $data_array = array(
                             "from_user_id" => $user_id,
                             "to_user_id" => $getUserRecord[0]["user_id"],
@@ -392,16 +391,17 @@
                         // passwords match
                         $model->updateData(TABLE_USERS, array('user_password' => md5($confirm_password)), array('user_id' => $user_id));
                         $this->session->set_flashdata('success', '<strong>Success!</strong> Your password has been changed');
-                        redirect(base_url('changePassword'));
+                        redirect(base_url('change-password'));
                     }
                     else
                     {
                         // passwords do not match
                         $this->session->set_flashdata('error', '<strong>Sorry!</strong> Passwords you have entered does not match');
-                        redirect(base_url('changePassword'));
+                        redirect(base_url('change-password'));
                     }
                 }
 
+                $data['meta_title'] = 'Change Password | ' . SITE_NAME;
                 $this->template->write_view("content", "pages/user/change-password", $data);
                 $this->template->render();
             }
@@ -427,7 +427,7 @@
                 $simpleImage->uploadImage($source, $destination, USER_IMG_WIDTH, USER_IMG_HEIGHT);
 
                 $this->session->set_flashdata('success', '<strong>Success!</strong> Your profile picture has been changed');
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -443,7 +443,7 @@
                 $destination = USER_IMG_PATH . "/" . getEncryptedString($user_id) . ".jpg";
                 @unlink($destination);
                 $this->session->set_flashdata('success', '<strong>Success!</strong> The profile picture you uplaoded has been removed');
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -459,7 +459,7 @@
                 $this->load->library('SocialLib');
                 $socialLib = new SocialLib();
                 $socialLib->connectWithFacebook($user_id);
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -477,7 +477,7 @@
                 $model->updateData(TABLE_USERS, array('user_facebook_id' => '', 'user_facebook_username' => '', 'user_facebook_photos' => ''), array('user_id' => $user_id));
 
                 $this->session->set_flashdata('success', '<strong>Success!</strong> Your facebook connection has been removed');
-                redirect(base_url('myAccount'));
+                redirect(base_url('my-account'));
             }
             else
             {
@@ -501,6 +501,7 @@
                 $user_name_records = $model->fetchSelectedData("user_id, first_name, last_name", TABLE_USERS, array('username' => $username));
                 if (empty($user_name_records))
                 {
+                    $data['meta_title'] = 'Page Not Found | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/index/page-not-found", $data);
                     $this->template->render();
                 }
@@ -533,6 +534,7 @@
                 $data['record'] = $record;
                 $data['pagination'] = $pagination;
                 $data['page_title'] = $page_title;
+                $data['meta_title'] = $page_title . ' | ' . SITE_NAME;
 
                 $this->template->write_view("content", "pages/user/my-albums", $data);
                 $this->template->render();
@@ -551,7 +553,7 @@
                 if (empty($is_album_name_exists))
                 {
                     // valid
-                    $album_key = substr(getEncryptedString(time() . $user_id . USER_IP . $this->session->userdata['username']), 0, 12);
+                    $album_key = getUniqueAlbumURLKey();
                     $data_array = array(
                         'user_id' => $user_id,
                         'username' => $this->session->userdata['username'],
@@ -571,7 +573,7 @@
                     // invalid
                     $this->session->set_flashdata('error', '<strong>Oops!</strong> Album name already exists.');
                 }
-                redirect(base_url('myAlbums'));
+                redirect(base_url('my-albums'));
             }
             else
             {
@@ -601,7 +603,7 @@
                         $fileExt = getFileExtension($_FILES['album_images']['name'][$iKey]);
                         if ($fileExt == 'png' || $fileExt == 'jpg' || $fileExt == 'jpeg' || $fileExt == 'gif')
                         {
-                            $random_key = $i . "-" . substr(time(), -2, 2) . "-" . substr($i . getEncryptedString((time() + $i) . USER_IP . $_FILES['album_images']['name'][$iKey]), -8, 8) . "-" . $album_key;
+                            $random_key = $i . "-" . substr(time(), -2, 2) . "-" . getRandomNumberLength($_FILES['album_images']['name'][$iKey], 12) . "-" . $album_key;
                             $fileName = $random_key . ".jpg";
                             $source = $_FILES['album_images']['tmp_name'][$iKey];
                             $destination = ALBUM_IMG_PATH . "/" . $fileName;
@@ -650,6 +652,7 @@
                 {
                     $data['album_key'] = $album_key;
                     $data['page_title'] = "Upload Photos";
+                    $data['meta_title'] = 'Upload Photos | ' . SITE_NAME;
                     $this->template->write_view("content", "pages/user/upload-photos", $data);
                     $this->template->render();
                 }
@@ -731,6 +734,7 @@
                 $data['pagination'] = $pagination;
                 $data['user_id'] = $owner_id;
                 $data['page_title'] = stripslashes($album_name);
+                $data['meta_title'] = stripslashes($album_name) . ' | ' . SITE_NAME;
                 $data['album_key'] = stripslashes($album_key);
                 $data['album_description'] = stripslashes($album_description);
                 $this->template->write_view("content", "pages/user/view-album", $data);
@@ -762,6 +766,7 @@
                     $data['totalLikesAndDislikes'] = $getTotalLikesAndDislikes;
                     $data['photo_pagination'] = $photo_pagination_links;
                     $data['page_title'] = stripslashes($user_record[0]['full_name']) . "'s Photos";
+                    $data['meta_title'] = $data['page_title'] . ' | ' . SITE_NAME;
                     $data['owner_username'] = $user_record[0]['username'];
                     $data['photo_description'] = stripslashes($record[0]['photo_description']);
                     $this->template->write_view("content", "pages/user/view-photo", $data);
@@ -892,7 +897,7 @@
                 {
                     $this->session->set_flashdata('error', '<strong>Sorry!</strong> You are not authorized to perform this action');
                 }
-                redirect('myAlbums');
+                redirect(base_url('my-albums'));
             }
         }
 
@@ -975,3 +980,4 @@
         }
 
     }
+    

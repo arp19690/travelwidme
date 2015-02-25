@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Disallow: /resources/
+Disallow: /assets/
+Disallow: /system/
+Disallow: /admin/
+Sitemap: http://travelwid.me/sitemap.xml
