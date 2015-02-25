@@ -39,35 +39,35 @@
             ?>
 
             <ul class="nav navbar-nav navbar-right">
-                <li id="home"><a itemprop="url" href="<?php echo base_url(); ?>" title="Home"><span class="glyphicon glyphicon-home"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Home</span></a></li>
+                <li id="home"><a href="<?php echo base_url(); ?>" title="Home"><span class="glyphicon glyphicon-home"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Home</span></a></li>
                 <!--<li><a rel="nofollow" href="<?php echo base_url('map-view'); ?>" title="Map View"><span class="glyphicon glyphicon-map-marker"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Map View</span></a></li>-->
                 <?php
                     if (isset($this->session->userdata["user_id"]))
                     {
                         ?>
-                                                                                                                                                                                                        <!--<li><a itemprop="url" href="<?php echo base_url("user/myWall"); ?>" title="Wall"><span class="glyphicon glyphicon-th-large"></span></a></li>-->
-                        <li><a itemprop="url" href="<?php echo base_url("messages"); ?>" title="Messages" id='nav-messages'><span class="glyphicon glyphicon-comment"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Messages</span></a></li>
-                        <li><a itemprop="url" href="<?php echo base_url("user/connectRequests"); ?>" title="Connect Requests" id='nav-connect-requests'><span class="glyphicon glyphicon-link"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Connect Requests</span></a></li>
+                                                                                                                                                                                                        <!--<li><a href="<?php echo base_url("user/myWall"); ?>" title="Wall"><span class="glyphicon glyphicon-th-large"></span></a></li>-->
+                        <li><a href="<?php echo base_url("messages"); ?>" title="Messages" id='nav-messages'><span class="glyphicon glyphicon-comment"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Messages</span></a></li>
+                        <li><a href="<?php echo base_url("user/connectRequests"); ?>" title="Connect Requests" id='nav-connect-requests'><span class="glyphicon glyphicon-link"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;&nbsp;Connect Requests</span></a></li>
 
                         <li class="dropdown">
-                            <a itemprop="url" href="#" class="dropdown-toggle nav-user" data-toggle="dropdown">
+                            <a href="#" class="dropdown-toggle nav-user" data-toggle="dropdown">
                                 <img src="<?php echo getUserImage($this->session->userdata["user_id"], $this->session->userdata["user_facebook_id"], NULL, 20, 20); ?>" alt="image" class="header-profile-img img-circle noborder"/>
                                 <?php echo $this->session->userdata["first_name"] . " " . $this->session->userdata["last_name"]; ?> <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a itemprop="url" href="<?php echo base_url('trip/plan'); ?>"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;Add New Trip</a></li>
+                                <li><a href="<?php echo base_url('trip/plan'); ?>"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;Add New Trip</a></li>
                                 <li class="divider"></li>
-                                <li><a itemprop="url" href="<?php echo base_url('trip/myTrips'); ?>"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;My Trips</a></li>
+                                <li><a href="<?php echo base_url('trip/myTrips'); ?>"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;My Trips</a></li>
                                 <li class="divider"></li>
-                                <li><a itemprop="url" href="<?php echo base_url('my-blogs'); ?>"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;My Blogs</a></li>
+                                <li><a href="<?php echo base_url('my-blogs'); ?>"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;My Blogs</a></li>
                                 <li class="divider"></li>
-                                <li><a itemprop="url" href="<?php echo base_url('my-albums'); ?>"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;My Albums</a></li>
+                                <li><a href="<?php echo base_url('my-albums'); ?>"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;My Albums</a></li>
                                 <li class="divider"></li>
-                                <li><a itemprop="url" href="<?php echo base_url('my-account'); ?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;My Account</a></li>
+                                <li><a href="<?php echo base_url('my-account'); ?>"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;My Account</a></li>
                                 <li class="divider"></li>
-                                <li><a itemprop="url" href="<?php echo base_url('change-password'); ?>"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;Change Password</a></li>
+                                <li><a href="<?php echo base_url('change-password'); ?>"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;Change Password</a></li>
                                 <li class="divider"></li>
-                                <li><a itemprop="url" href="<?php echo base_url('logout'); ?>"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Logout</a></li>
+                                <li><a href="<?php echo base_url('logout'); ?>"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Logout</a></li>
                             </ul>
                         </li>
                         <?php
@@ -80,9 +80,9 @@
                             $login_url = base_url("login?next=" . current_url());
                         }
                         ?>
-                        <li><a itemprop="url" href="<?php echo base_url("how-it-works"); ?>" title="How it works?">How it works?</a></li>
-                        <li><a itemprop="url" href="<?php echo base_url("register"); ?>" title="Sign Up">Sign Up</a></li>
-                        <li><a itemprop="url" href="<?php echo $login_url; ?>" title="Login">Login</a></li>
+                        <li><a href="<?php echo base_url("how-it-works"); ?>" title="How it works?">How it works?</a></li>
+                        <li><a href="<?php echo base_url("register"); ?>" title="Sign Up">Sign Up</a></li>
+                        <li><a href="<?php echo $login_url; ?>" title="Login">Login</a></li>
                         <?php
                     }
                 ?>

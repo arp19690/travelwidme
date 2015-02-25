@@ -10,7 +10,7 @@
 <div class="container col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2">
 
     <div class="row margin-bottom-20 clearfix text-center">
-        <a itemprop="url" href="<?php echo base_url("login/facebook?next=" . current_url()); ?>" class="btn btn-primary btn-lg margin-top-20 facebook-blue-btn" title="Login with facebook" id="fbLoginButton"><span class="facebook-initial">f</span>&nbsp;&nbsp;Login with facebook</a>
+        <a href="<?php echo base_url("login/facebook?next=" . current_url()); ?>" class="btn btn-primary btn-lg margin-top-20 facebook-blue-btn" title="Login with facebook" id="fbLoginButton"><span class="facebook-initial">f</span>&nbsp;&nbsp;Login with facebook</a>
         <p class="margin-top-20">Or,</p>
         <hr/>
     </div>
@@ -51,7 +51,7 @@
     </div>
 
     <div class="row margin-top-40 text-right">
-        <a itemprop="url" href="<?php echo base_url('register'); ?>">New user, Sign up?</a><br/>
-        <a itemprop="url" href="<?php echo base_url('forgotPassword'); ?>">Forgot password?</a>
+        <a href="<?php echo base_url('register'); ?>">New user, Sign up?</a><br/>
+        <a href="<?php echo base_url('forgotPassword'); ?>">Forgot password?</a>
     </div>
 </div> <!-- /container -->

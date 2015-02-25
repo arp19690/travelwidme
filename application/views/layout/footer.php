@@ -9,14 +9,14 @@
             <div class="inline-block">
                 <h2><?php echo SITE_NAME; ?></h2>
                 <ul class="footer-upper-links margin-top-20">
-                    <li><a itemprop="url" href="<?php echo base_url(); ?>">Home</a></li>
-                    <li><a itemprop="url" href="<?php echo base_url('login'); ?>">Login</a></li>
-                    <li><a itemprop="url" href="<?php echo base_url('register'); ?>">Sign Up</a></li>
-                    <li><a itemprop="url" href="<?php echo base_url('blog'); ?>">Blog</a></li>
-                    <li><a itemprop="url" href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
-                    <li><a itemprop="url" href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
-                    <li><a itemprop="url" href="<?php echo base_url('privacy-policy'); ?>">Privacy policy</a></li>
-                    <li><a itemprop="url" href="<?php echo base_url('terms'); ?>">Terms &amp; conditions</a></li>
+                    <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                    <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
+                    <li><a href="<?php echo base_url('register'); ?>">Sign Up</a></li>
+                    <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
+                    <li><a href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
+                    <li><a href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
+                    <li><a href="<?php echo base_url('privacy-policy'); ?>">Privacy policy</a></li>
+                    <li><a href="<?php echo base_url('terms'); ?>">Terms &amp; conditions</a></li>
                 </ul>
             </div>
         </div>
@@ -53,15 +53,15 @@
         <div class="col-lg-12">
             <p class="col-lg-6 col-xs-12 footer-copyright">&copy; Copyright 2014 &middot; All Rights Reserved</p>
             <ul class="col-lg-6 col-xs-12 text-right footer-links">
-                <li><a itemprop="url" href="<?php echo base_url('blog'); ?>">Blog</a></li>
+                <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
                 <li>|</li>
-                <li><a itemprop="url" href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
+                <li><a href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
                 <li>|</li>
-                <li><a itemprop="url" href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
+                <li><a href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>
                 <li>|</li>
-                <li><a itemprop="url" href="<?php echo base_url('privacy-policy'); ?>">Privacy policy</a></li>
+                <li><a href="<?php echo base_url('privacy-policy'); ?>">Privacy policy</a></li>
                 <li>|</li>
-                <li><a itemprop="url" href="<?php echo base_url('terms'); ?>">Terms &amp; conditions</a></li>
+                <li><a href="<?php echo base_url('terms'); ?>">Terms &amp; conditions</a></li>
             </ul>
         </div>
     </div>

@@ -51,19 +51,19 @@
         <p>Ads appearing on our site may be delivered to Users by advertising partners, who may set cookies. These cookies allow the ad server to recognize your computer each time they send you an online advertisement to compile non personal identification information about you or others who use your computer. This information allows ad networks to, among other things, deliver targeted advertisements that they believe will be of most interest to you. This privacy policy does not cover the use of cookies by any advertisers.</p><br/>
 
         <p><strong>Google Adsense</strong></p>
-        <p>Some of the ads may be served by Google. Google's use of the DART cookie enables it to serve ads to Users based on their visit to our Site and other sites on the Internet. DART uses "non personally identifiable information" and does NOT track personal information about you, such as your name, email address, physical address, etc. You may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at <a itemprop="url" href="http://www.google.com/privacy_ads.html" target="_blank">http://www.google.com/privacy_ads.html</a></p><br/>
+        <p>Some of the ads may be served by Google. Google's use of the DART cookie enables it to serve ads to Users based on their visit to our Site and other sites on the Internet. DART uses "non personally identifiable information" and does NOT track personal information about you, such as your name, email address, physical address, etc. You may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at <a href="http://www.google.com/privacy_ads.html" target="_blank">http://www.google.com/privacy_ads.html</a></p><br/>
 
         <p><strong>Changes to this privacy policy</strong></p>
         <p>TravelWid.Me has the discretion to update this privacy policy at any time. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.</p><br/>
 
         <p><strong>Your acceptance of these terms</strong></p>
-        <p>By using this Site, you signify your acceptance of this policy and <a itemprop="url" href="<?php echo base_url('terms'); ?>">terms of service</a>. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.</p><br/>
+        <p>By using this Site, you signify your acceptance of this policy and <a href="<?php echo base_url('terms'); ?>">terms of service</a>. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.</p><br/>
 
         <p><strong>Contacting us</strong></p>
         <p>If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at:</p><br/>
         <p><?php echo SITE_NAME; ?></p>
-        <p><a itemprop="url" href="www.travelwid.me">www.travelwid.me</a></p>
-        <p><a itemprop="url" href="mailto:<?php echo SITE_EMAIL_GMAIL;?>"><?php echo SITE_EMAIL_GMAIL;?></a></p><br/>
+        <p><a href="www.travelwid.me">www.travelwid.me</a></p>
+        <p><a href="mailto:<?php echo SITE_EMAIL_GMAIL;?>"><?php echo SITE_EMAIL_GMAIL;?></a></p><br/>
 
         <p>This document was last updated on April 11, 2014</p>
     </div>

@@ -39,8 +39,8 @@
     </div>
 
     <div class="row margin-top-40 text-right">
-        <a itemprop="url" href="<?php echo base_url('login'); ?>">Login?</a><br/>
-        <a itemprop="url" href="<?php echo base_url('register'); ?>">Sign up?</a>
+        <a href="<?php echo base_url('login'); ?>">Login?</a><br/>
+        <a href="<?php echo base_url('register'); ?>">Sign up?</a>
     </div>
 </div> <!-- /container -->
 
