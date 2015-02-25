@@ -603,7 +603,7 @@
                         $fileExt = getFileExtension($_FILES['album_images']['name'][$iKey]);
                         if ($fileExt == 'png' || $fileExt == 'jpg' || $fileExt == 'jpeg' || $fileExt == 'gif')
                         {
-                            $random_key = $i . "-" . substr(time(), -2, 2) . "-" . substr($i . getEncryptedString((time() + $i) . USER_IP . $_FILES['album_images']['name'][$iKey]), -8, 8) . "-" . $album_key;
+                            $random_key = $i . "-" . substr(time(), -2, 2) . "-" . getRandomNumberLength($_FILES['album_images']['name'][$iKey], 12) . "-" . $album_key;
                             $fileName = $random_key . ".jpg";
                             $source = $_FILES['album_images']['tmp_name'][$iKey];
                             $destination = ALBUM_IMG_PATH . "/" . $fileName;
