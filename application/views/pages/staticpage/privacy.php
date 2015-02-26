@@ -62,7 +62,7 @@
         <p><strong>Contacting us</strong></p>
         <p>If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at:</p><br/>
         <p><?php echo SITE_NAME; ?></p>
-        <p><a href="www.travelwid.me">www.travelwid.me</a></p>
+        <p><a href="http://travelwid.me">travelwid.me</a></p>
         <p><a href="mailto:<?php echo SITE_EMAIL_GMAIL;?>"><?php echo SITE_EMAIL_GMAIL;?></a></p><br/>
 
         <p>This document was last updated on April 11, 2014</p>
