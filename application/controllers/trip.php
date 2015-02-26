@@ -286,10 +286,10 @@
                 $pagination = getPaginationLinks(current_url(), $total_records, $page, $max_records);
 //                prd($pagination);
 
-                $page_title = "Search Results for <strong>" . ucwords($view_looking_for) . "</strong>";
+                $page_title = "Search Results";
                 if (!empty($destination))
                 {
-                    $page_title = "Search Results for <strong>" . ucwords($view_looking_for) . "</strong> - <strong>" . $destination . "</strong>";
+                    $page_title = "Search Results for <strong>" . $destination . "</strong>";
                 }
 
                 $data["record"] = $record;

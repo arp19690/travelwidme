@@ -5,34 +5,34 @@
         <div class="container-fluid margin-top-20 clearfix">
             <div class="row">
                 <form role="form" class="validate-form search-page-form" action="<?php echo base_url('trip/search'); ?>">
-                    <div class='col-lg-3'>
+<!--                    <div class='col-lg-3'>
                         <select class='form-control' name='looking_for'>
                             <?php
                                 $destination = "";
                                 if (isset($_GET["destination"]))
                                     $destination = $_GET["destination"];
-
-                                $looking_for = "travelers";
-                                if (isset($_GET["looking_for"]))
-                                    $looking_for = $_GET["looking_for"];
-
-                                $host_selected = "";
-                                $travel_selected = "";
-                                if ($looking_for == "travelers")
-                                {
-                                    $host_selected = "";
-                                    $travel_selected = "selected='selected'";
-                                }
-                                else
-                                {
-                                    $host_selected = "selected='selected'";
-                                    $travel_selected = "";
-                                }
+//
+//                                $looking_for = "travelers";
+//                                if (isset($_GET["looking_for"]))
+//                                    $looking_for = $_GET["looking_for"];
+//
+//                                $host_selected = "";
+//                                $travel_selected = "";
+//                                if ($looking_for == "travelers")
+//                                {
+//                                    $host_selected = "";
+//                                    $travel_selected = "selected='selected'";
+//                                }
+//                                else
+//                                {
+//                                    $host_selected = "selected='selected'";
+//                                    $travel_selected = "";
+//                                }
                             ?>
                             <option value='host' <?php echo $host_selected; ?>>Hosts</option>
                             <option value='travel' <?php echo $travel_selected; ?>>Travelers</option>
                         </select>
-                    </div>
+                    </div>-->
 
                     <div class='col-lg-6'>
                         <input type='text' class='form-control gMapLocation required' required="required" name='destination' placeholder="Input your destination" value='<?php echo $destination; ?>'/>
