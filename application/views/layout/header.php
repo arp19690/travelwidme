@@ -39,10 +39,10 @@
         <meta property="og:description" content="<?php echo $meta_description; ?>"/>
         <meta property="og:image" content="<?php echo $meta_logo_image; ?>"/>
         <meta property="og:locale" content="en_US" />
-        <link rel="icon" type="image/png" href="<?php echo IMAGES_PATH; ?>/favicon.ico" />
-        <link rel="apple-touch-icon-precomposed" href="<?php echo IMAGES_PATH; ?>/favicon.ico" />
-        <link href="<?php echo base_url(CSS_PATH . "/combined.css"); ?>" rel="stylesheet"> 
-        <script src="<?php echo base_url(JS_PATH . "/combined.js"); ?>"></script>
+        <link rel="icon" type="image/png" href="<?php echo base_url(IMAGES_PATH . '/favicon.ico'); ?>" />
+        <link rel="apple-touch-icon-precomposed" href="<?php echo base_url(IMAGES_PATH . '/favicon.ico'); ?>" />
+        <link type="text/css" href="<?php echo base_url(CSS_PATH . "/combined.css"); ?>" rel="stylesheet"> 
+        <script type="text/javascript" src="<?php echo base_url(JS_PATH . "/combined.js"); ?>"></script>
         <!--[if IE 8]>
         <script type="text/javascript" src="https://d2z9qv80fklwtv.cloudfront.net/application/javascript/respond.min.js"></script>
         <script type="text/javascript" src="https://d2z9qv80fklwtv.cloudfront.net/application/javascript/pie.js"></script>
