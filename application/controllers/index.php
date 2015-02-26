@@ -268,14 +268,14 @@
                         {
                             // account not active
                             $this->session->set_flashdata('error', '<strong>Sorry!</strong> Your account is not active');
-                            redirect(base_url('forgotPassword'));
+                            redirect(base_url('forgot-password'));
                         }
                     }
                     else
                     {
                         // invalid
                         $this->session->set_flashdata('error', 'No such record found.');
-                        redirect(base_url('forgotPassword'));
+                        redirect(base_url('forgot-password'));
                     }
                 }
                 else

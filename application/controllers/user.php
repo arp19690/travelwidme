@@ -407,7 +407,7 @@
             }
             else
             {
-                redirect(base_url('forgotPassword'));
+                redirect(base_url('forgot-password'));
             }
         }
 
