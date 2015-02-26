@@ -167,10 +167,10 @@
             }
 
             // all the view photo pages
-            $photo_records = $model->fetchSelectedData('image_name', TABLE_PHOTOS, array('image_name !=' => '', 'album_key !=' => ''));
+            $photo_records = $model->fetchSelectedData('photo_id, album_key', TABLE_PHOTOS, array('image_name !=' => '', 'album_key !=' => ''));
             foreach ($photo_records as $prKey => $prValue)
             {
-                $photo_url = base_url('view/album/' . $prValue['image_name']);
+                $photo_url = base_url('view/photo/' . $prValue['album_key'] . '/' . $prValue['photo_id']);
                 $xml .= '<url><loc>' . $photo_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
             }
 
