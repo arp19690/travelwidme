@@ -6,7 +6,7 @@
 
         define("FACEBOOK_APP_ID", "716914558360050");
         define("FACEBOOK_SECRET_ID", "21646c23a6a58b0190db4118aedcde18");
-        define("FACEBOOK_CALLBACK_URL", "http://localhost/work/svn/travel/index/facebookAuth");
+        define("FACEBOOK_CALLBACK_URL", "http://localhost/work/svn/travelwidme/index/facebookAuth");
     }
     else
     {
