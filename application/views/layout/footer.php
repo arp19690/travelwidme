@@ -11,7 +11,7 @@
                 <ul class="footer-upper-links margin-top-20">
                     <li><a href="<?php echo base_url(); ?>">Home</a></li>
                     <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
-                    <li><a href="<?php echo base_url('register'); ?>">Sign Up</a></li>
+                    <li><a href="<?php echo base_url('signup'); ?>">Sign Up</a></li>
                     <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
                     <li><a href="<?php echo base_url('contact-us'); ?>">Contact us</a></li>
                     <li><a href="<?php echo base_url('how-it-works'); ?>">How it works</a></li>

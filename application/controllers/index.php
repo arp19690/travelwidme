@@ -91,7 +91,7 @@
             }
         }
 
-        public function register()
+        public function signup()
         {
             if (!isset($this->session->userdata['user_id']))
             {
@@ -167,7 +167,7 @@
                             // invalid username                            
                             $this->session->set_flashdata('error', '<strong>Oops!</strong> Username already exists');
                             $this->session->set_flashdata('post', $arr);
-                            redirect(base_url('register'));
+                            redirect(base_url('signup'));
                         }
                     }
                     else
@@ -175,13 +175,13 @@
                         // invalid email    
                         $this->session->set_flashdata('error', '<strong>Oops!</strong> Email already exists');
                         $this->session->set_flashdata('post', $arr);
-                        redirect(base_url('register'));
+                        redirect(base_url('signup'));
                     }
                 }
                 else
                 {
-                    $data['meta_title'] = 'Register | ' . SITE_NAME;
-                    $this->template->write_view("content", "pages/index/register", $data);
+                    $data['meta_title'] = 'Sign up | ' . SITE_NAME;
+                    $this->template->write_view("content", "pages/index/signup", $data);
                     $this->template->render();
                 }
             }

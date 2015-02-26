@@ -51,7 +51,7 @@
     </div>
 
     <div class="row margin-top-40 text-right">
-        <a href="<?php echo base_url('register'); ?>">New user, Sign up?</a><br/>
+        <a href="<?php echo base_url('signup'); ?>">New user, Sign up?</a><br/>
         <a href="<?php echo base_url('forgotPassword'); ?>">Forgot password?</a>
     </div>
 </div> <!-- /container -->

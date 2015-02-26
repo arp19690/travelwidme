@@ -52,7 +52,8 @@
     $route['terms'] = 'staticpage/index/terms';
     $route['my-blogs'] = 'blog/myBlogs';
     $route['login'] = 'index/login';
-    $route['register'] = 'index/register';
+    $route['register'] = 'index/signup';
+    $route['signup'] = 'index/signup';
     $route['forgot-password'] = 'index/forgotPassword';
     $route['change-password'] = 'user/changePassword';
     $route['activate'] = 'index/activate';
