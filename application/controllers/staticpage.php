@@ -87,6 +87,7 @@
 
                         if ($_SERVER["REMOTE_ADDR"] != '127.0.0.1')
                         {
+                            require_once APPPATH . '/models/email_model.php';
                             $email_model = new Email_model();
 
                             // message to the us
