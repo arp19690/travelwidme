@@ -128,7 +128,6 @@
             $this->ci = & get_instance();
             $this->ci->load->database();
             $this->ci->load->model('Common_model');
-//            $model = $this->ci->Common_model;
             $model = new Common_model();
 
             $xml = '<?xml version = "1.0" encoding = "UTF-8"?>' . "\n";
@@ -143,35 +142,35 @@
             }
 
             // all the active trips
-            $trip_records = $model->fetchSelectedData('url_key', TABLE_TRIPS, array('trip_status' => '1'));
+            $trip_records = $model->fetchSelectedData('url_key', TABLE_TRIPS, array('trip_status' => '1'), 'trip_id', 'DESC');
             foreach ($trip_records as $trKey => $trValue)
             {
                 $trip_url = getTripUrl($trValue['url_key']);
-                $xml .= '<url><loc>' . $trip_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $trip_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>' . "\n";
             }
 
             // all the active users
-            $user_records = $model->fetchSelectedData('username', TABLE_USERS, array('user_status' => '1'));
+            $user_records = $model->fetchSelectedData('username', TABLE_USERS, array('user_status' => '1'), 'user_id', 'DESC');
             foreach ($user_records as $urKey => $urValue)
             {
                 $public_profile_url = getPublicProfileUrl($urValue['username']);
-                $xml .= '<url><loc>' . $public_profile_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $public_profile_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>' . "\n";
             }
 
             // all the active blogs
-            $blog_records = $model->fetchSelectedData('blog_url_key', TABLE_BLOGS, array('blog_status' => '1'));
+            $blog_records = $model->fetchSelectedData('blog_url_key', TABLE_BLOGS, array('blog_status' => '1', 'blog_url_key !=' => ''), 'blog_id', 'DESC');
             foreach ($blog_records as $brKey => $brValue)
             {
                 $blog_url = base_url('blog/read/' . $brValue['blog_url_key']);
-                $xml .= '<url><loc>' . $blog_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $blog_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>' . "\n";
             }
 
             // all the view photo pages
-            $photo_records = $model->fetchSelectedData('photo_id, album_key', TABLE_PHOTOS, array('image_name !=' => '', 'album_key !=' => ''));
+            $photo_records = $model->fetchSelectedData('photo_id, album_key', TABLE_PHOTOS, array('image_name !=' => '', 'album_key !=' => ''), 'album_id', 'DESC');
             foreach ($photo_records as $prKey => $prValue)
             {
                 $photo_url = base_url('view/photo/' . $prValue['album_key'] . '/' . $prValue['photo_id']);
-                $xml .= '<url><loc>' . $photo_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>' . "\n";
+                $xml .= '<url><loc>' . $photo_url . '</loc><lastmod>' . date('Y-m-d') . 'T' . date('H:i:s') . '+00:00</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>' . "\n";
             }
 
             $xml .= '</urlset>';
